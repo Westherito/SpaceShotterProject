@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbPlayer: {fileID: 8266938476992642173}
   vel: 7
+  tiros: {fileID: 1615298817570157269, guid: eb5949e4765eb5c4e9017f7e8a8ce297, type: 3}
 --- !u!50 &8266938476992642173
 Rigidbody2D:
   serializedVersion: 4
@@ -94,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8266938477139890199}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.00025017557}
-  m_LocalPosition: {x: 0, y: -3.74, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
