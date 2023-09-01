@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movPlayer.x = Input.GetAxis("Horizontal") * vel;
-        movPlayer.y = Input.GetAxis("Vertical") * vel;
-        rbPlayer.velocity = movPlayer;
-
+        // Pegando o Input do usuário e adicionando velocidade
+        movPlayer.x = Input.GetAxis("Horizontal");
+        movPlayer.y = Input.GetAxis("Vertical");
+        // Normalizando a direção
+        movPlayer.Normalize();
+        // Passando para o player
+        rbPlayer.velocity = movPlayer * vel;
     }
 }
