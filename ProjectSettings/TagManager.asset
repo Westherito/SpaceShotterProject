@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: tiros
+    uniqueID: 1990779627
+    locked: 0
+  - name: Player
+    uniqueID: 710265809
+    locked: 0
