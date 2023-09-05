@@ -19,7 +19,9 @@ public class ShotController : MonoBehaviour
     {
 
     }
-
+    
+    
+    // Colisão com a parede invisível
     private void OnTriggerEnter2D()
     {
         Destroy(gameObject);

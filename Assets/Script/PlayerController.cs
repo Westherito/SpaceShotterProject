@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         rbPlayer.velocity = movPlayer * vel;
         TirosPlayer();
     }
-
+    // Método para instanciar os tiros do player
     private void TirosPlayer()
     {
         if (Input.GetButtonDown("Fire1"))
