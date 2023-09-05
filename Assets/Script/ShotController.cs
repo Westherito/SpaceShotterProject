@@ -20,8 +20,8 @@ public class ShotController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

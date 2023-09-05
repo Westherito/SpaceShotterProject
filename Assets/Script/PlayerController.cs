@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void TirosPlayer()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(tiros, transform.position, transform.rotation);
         }
