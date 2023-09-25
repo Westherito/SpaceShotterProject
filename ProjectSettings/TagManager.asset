@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - enemy
+  - player
+  - tiro player
+  - tiro enemy
   - 
   - 
   - 

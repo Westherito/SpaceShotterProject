@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1877326285}
   - component: {fileID: 7650025162846350756}
   - component: {fileID: -6965742069675646366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tiros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8914817305716622420}
   - component: {fileID: 2514771815491058267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootEffectPlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
