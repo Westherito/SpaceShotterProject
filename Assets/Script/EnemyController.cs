@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject enemyBullet;
 
     private float timerBullet = 1f;
+
+    [SerializeField] private Transform posTiro;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,7 @@ public class EnemyController : MonoBehaviour
             timerBullet -= Time.deltaTime;
             if (timerBullet < 0f)
             {
-                Instantiate(enemyBullet, transform.position, transform.rotation);
+                Instantiate(enemyBullet, posTiro.position, transform.rotation);
 
                 timerBullet = Random.Range(1.5f, 2f);
             }
