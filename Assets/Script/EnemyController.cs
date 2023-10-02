@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class EnemyController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject enemyBullet;
 
     private float timerBullet = 1f;
+    private int lifeEnemy = 3;
 
     [SerializeField] private Transform posTiro;
     // Start is called before the first frame update
@@ -21,6 +23,18 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        EnemyTiros();
+    }
+
+    public void EnemyLife(int dano)
+    {
+        lifeEnemy -= dano;
+        // Testando a colisão
+        //Debug.Log(lifeEnemy + " de vida do Inimigo!");
+    }
+
+    private void EnemyTiros()
     {
         // Verificando se a sprite está visivel na tela
         bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;

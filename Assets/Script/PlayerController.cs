@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movPlayer;
     [SerializeField] private float vel;
     [SerializeField] private GameObject tiros;
+    private int lifePlayer = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +39,12 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(tiros, transform.position, transform.rotation);
         }
+    }
+
+    public void PlayerLife(int dano)
+    {
+        lifePlayer -= dano;
+        // Testando a colisão
+        // Debug.Log(lifePlayer + " de vida do player!");
     }
 }

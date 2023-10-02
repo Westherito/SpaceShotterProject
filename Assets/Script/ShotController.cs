@@ -22,8 +22,21 @@ public class ShotController : MonoBehaviour
     
     
     // Colisão com a parede invisível
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
+        // Colisão se algum objeto tiver o script descrito e utilizando as tags
+
+        // Dano no inimigo
+        if (collider.CompareTag("Inimigo01"))
+        {
+            collider.GetComponent<EnemyController>().EnemyLife(1);
+        }
+        // Dano no player
+        if (collider.CompareTag("Jogador"))
+        {
+            collider.GetComponent<PlayerController>().PlayerLife(1);
+        }
+        // Destruindo os tiros
         Destroy(gameObject);
     }
 }
