@@ -6,7 +6,8 @@ public class ShotController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rbObj;
     [SerializeField] private float vel;
-
+    [SerializeField] private GameObject explosao;
+    private float timer = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,8 @@ public class ShotController : MonoBehaviour
     {
 
     }
-    
-    
+
+
     // Colisão com a parede invisível
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -38,5 +39,6 @@ public class ShotController : MonoBehaviour
         }
         // Destruindo os tiros
         Destroy(gameObject);
+        Instantiate(explosao, transform.position, transform.rotation);
     }
 }
