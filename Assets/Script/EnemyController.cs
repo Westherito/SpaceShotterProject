@@ -30,6 +30,10 @@ public class EnemyController : MonoBehaviour
     public void EnemyLife(int dano)
     {
         lifeEnemy -= dano;
+        if (lifeEnemy <= 0)
+        {
+            Destroy(gameObject);
+        }
         // Testando a colisão
         //Debug.Log(lifeEnemy + " de vida do Inimigo!");
     }

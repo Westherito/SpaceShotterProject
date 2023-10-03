@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movPlayer;
     [SerializeField] private float vel;
     [SerializeField] private GameObject tiros;
-    private int lifePlayer = 3;
+    private int lifePlayer = 5;
     // Start is called before the first frame update
     void Start()
     {
