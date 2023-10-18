@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private GameObject enemyBullet;
 
+    [SerializeField] private GameObject Morte; 
+
     private float timerBullet = 1f;
     private int lifeEnemy = 3;
 
@@ -33,6 +35,7 @@ public class EnemyController : MonoBehaviour
         if (lifeEnemy <= 0)
         {
             Destroy(gameObject);
+            Instantiate(Morte, transform.position, transform.rotation);
         }
         // Testando a colisão
         //Debug.Log(lifeEnemy + " de vida do Inimigo!");
