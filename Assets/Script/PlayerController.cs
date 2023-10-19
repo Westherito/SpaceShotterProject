@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float vel;
     [SerializeField] private GameObject tiros;
     private int lifePlayer = 5;
+    [SerializeField] GameObject Morte;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,17 @@ public class PlayerController : MonoBehaviour
     public void PlayerLife(int dano)
     {
         lifePlayer -= dano;
+        if (lifePlayer <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(Morte, transform.position, transform.rotation);
+            Recomecar();
+        }
         // Testando a colisão
         // Debug.Log(lifePlayer + " de vida do player!");
+    }
+    private void Recomecar()
+    {
+        
     }
 }

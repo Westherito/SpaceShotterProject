@@ -15,7 +15,7 @@ public class ImpactShots : MonoBehaviour
     {
         
     }
-
+    //Aplicando método com animação da sprite
     public void Destruir()
     {
         Destroy(gameObject);
