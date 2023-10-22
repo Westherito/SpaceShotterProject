@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
             timerBullet -= Time.deltaTime;
             if (timerBullet < 0f)
             {
-                Instantiate(enemyBullet, posTiro.position, transform.rotation);
+                Instantiate(enemyBullet, transform.position, transform.rotation);
 
                 timerBullet = Random.Range(1.5f, 2f);
             }
