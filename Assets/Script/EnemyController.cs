@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : EnemyFatherController
 {
     [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] private float vel;
-
     [SerializeField] private GameObject enemyBullet;
 
-    [SerializeField] private GameObject Morte; 
-
     private float timerBullet = 1f;
-    private int lifeEnemy = 3;
 
     [SerializeField] private Transform posTiro;
     // Start is called before the first frame update
@@ -26,18 +21,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         EnemyTiros();
-    }
-
-    public void EnemyLife(int dano)
-    {
-        lifeEnemy -= dano;
-        if (lifeEnemy <= 0)
-        {
-            Destroy(gameObject);
-            Instantiate(Morte, transform.position, transform.rotation);
-        }
-        // Testando a colisão
-        //Debug.Log(lifeEnemy + " de vida do Inimigo!");
     }
 
     private void EnemyTiros()

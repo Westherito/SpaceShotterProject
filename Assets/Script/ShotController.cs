@@ -28,9 +28,9 @@ public class ShotController : MonoBehaviour
         // Colisão se algum objeto tiver o script descrito e utilizando as tags
 
         // Dano no inimigo
-        if (collider.CompareTag("Inimigo01"))
+        if (collider.CompareTag("Inimigo"))
         {
-            collider.GetComponent<EnemyController>().EnemyLife(1);
+            collider.GetComponent<EnemyFatherController>().EnemyLife(1);
         }
         // Dano no player
         if (collider.CompareTag("Jogador"))
