@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 7952190965038483749}
   m_Layer: 0
   m_Name: Inimigo02
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   vel: 0
-  lifeEnemy: 0
+  lifeEnemy: 3
   rb: {fileID: 7952190965038483750}
   enemyBullet: {fileID: 5700473296240593810, guid: 9faa685426872e247a1ba84410987a59, type: 3}
   posTiro: {fileID: 5700473296240593812, guid: 9faa685426872e247a1ba84410987a59, type: 3}

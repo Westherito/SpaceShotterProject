@@ -664,10 +664,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimigo02
       objectReference: {fileID: 0}
-    - target: {fileID: 7952190965038483749, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
-      propertyPath: lifeEnemy
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
 --- !u!1001 &8977011725841862439
