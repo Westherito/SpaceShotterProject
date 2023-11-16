@@ -38,7 +38,7 @@ public class EnemyController02 : EnemyFatherController
             timerBullet -= Time.deltaTime;
             if (timerBullet < 0f)
             {
-                Instantiate(enemyBullet, transform.position, transform.rotation);
+                Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
 
                 timerBullet = Random.Range(1.5f, 2f);
             }
