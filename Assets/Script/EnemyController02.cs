@@ -20,10 +20,9 @@ public class EnemyController02 : EnemyFatherController
     // Update is called once per frame
     void Update()
     {
-        EnemyTiros();
+        EnemyMov();
     }
-
-    private void EnemyTiros()
+    private void EnemyMov()
     {
         // Verificando se a sprite está visivel na tela
         bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
@@ -33,15 +32,19 @@ public class EnemyController02 : EnemyFatherController
             // Movimento do inimigo
             // Alterando a velocidade 
             rb.velocity = new Vector2(0f, vel);
+            // Metodo de tiros
+            EnemyTiros();
+        }
+    }
+    private void EnemyTiros()
+    {
+        // instanciando tiros com delay
+        timerBullet -= Time.deltaTime;
+        if (timerBullet < 0f)
+        {
+            Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
 
-            // instanciando tiros com delay
-            timerBullet -= Time.deltaTime;
-            if (timerBullet < 0f)
-            {
-                Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
-
-                timerBullet = Random.Range(1.5f, 2f);
-            }
+            timerBullet = Random.Range(1.5f, 2f);
         }
     }
 }

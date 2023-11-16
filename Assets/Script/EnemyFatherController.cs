@@ -27,7 +27,5 @@ public class EnemyFatherController : MonoBehaviour
             Destroy(gameObject);
             Instantiate(Morte, transform.position, transform.rotation);
         }
-        // Testando a colisão
-        //Debug.Log(lifeEnemy + " de vida do Inimigo!");
     }
 }

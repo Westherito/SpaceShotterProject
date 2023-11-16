@@ -16,30 +16,33 @@ public class EnemyController : EnemyFatherController
     {
         timerBullet = Random.Range(0.5f, 2f);
     }
-
     // Update is called once per frame
     void Update()
     {
-        EnemyTiros();
+        EnemyMov();
     }
-
-    private void EnemyTiros()
+    private void EnemyMov()
     {
         // Verificando se a sprite está visivel na tela
         bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
 
         if (visible)
         {
-            //Alterando a velocidade 
+            // lterando a velocidade 
             rb.velocity = new Vector2(0f, vel);
-            //instanciando tiros com delay
-            timerBullet -= Time.deltaTime;
-            if (timerBullet < 0f)
-            {
-                Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
+            // Metodo de tiros
+            EnemyTiros();
 
-                timerBullet = Random.Range(1.5f, 2f);
-            }
+        }
+    }
+    private void EnemyTiros() {
+        //instanciando tiros com delay
+        timerBullet -= Time.deltaTime;
+        if (timerBullet < 0f)
+        {
+            Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
+
+            timerBullet = Random.Range(1.5f, 2f);
         }
     }
 }
