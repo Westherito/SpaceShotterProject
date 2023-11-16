@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   vel: -1
-  lifeEnemy: 0
+  lifeEnemy: 1
   rb: {fileID: 4681216012991202512}
   enemyBullet: {fileID: 5700473296240593810, guid: 9faa685426872e247a1ba84410987a59, type: 3}
   posTiro: {fileID: 1232408228}

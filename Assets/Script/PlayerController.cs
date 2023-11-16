@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movPlayer;
     [SerializeField] private float vel;
     [SerializeField] private GameObject tiros;
+    private float velTiro = 10f;
     private int lifePlayer = 5;
     [SerializeField] GameObject Morte;
     // Start is called before the first frame update
@@ -38,7 +39,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(tiros, transform.position, transform.rotation);
+            var playerTiro = Instantiate(tiros, transform.position, transform.rotation);
+            playerTiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
+            
         }
     }
 

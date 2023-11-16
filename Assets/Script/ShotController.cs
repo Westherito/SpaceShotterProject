@@ -7,12 +7,11 @@ public class ShotController : MonoBehaviour
     [SerializeField] private Rigidbody2D rbObj;
     [SerializeField] private float vel;
     [SerializeField] private GameObject explosao;
-    private float timer = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
         //Movimento do tiro para cima
-        rbObj.velocity = Vector2.up * vel;
+        //rbObj.velocity = Vector2.up * vel;
     }
 
     // Update is called once per frame

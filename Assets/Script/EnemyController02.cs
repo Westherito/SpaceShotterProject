@@ -9,6 +9,7 @@ public class EnemyController02 : EnemyFatherController
     [SerializeField] private GameObject enemyBullet;
 
     private float timerBullet = 1f;
+    private float velTiro = -3f;
 
     [SerializeField] private Transform posTiro;
     // Start is called before the first frame update
@@ -42,6 +43,8 @@ public class EnemyController02 : EnemyFatherController
         timerBullet -= Time.deltaTime;
         if (timerBullet < 0f)
         {
+            var enemyTiro = Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
+            enemyTiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
             Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
 
             timerBullet = Random.Range(1.5f, 2f);
