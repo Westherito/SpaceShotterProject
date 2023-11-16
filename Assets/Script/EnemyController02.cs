@@ -30,9 +30,11 @@ public class EnemyController02 : EnemyFatherController
 
         if (visible)
         {
-            //Alterando a velocidade 
+            // Movimento do inimigo
+            // Alterando a velocidade 
             rb.velocity = new Vector2(0f, vel);
-            //instanciando tiros com delay
+
+            // instanciando tiros com delay
             timerBullet -= Time.deltaTime;
             if (timerBullet < 0f)
             {
@@ -43,5 +45,6 @@ public class EnemyController02 : EnemyFatherController
         }
     }
 }
-    
+
+
 
