@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimigo01
       objectReference: {fileID: 0}
+    - target: {fileID: 4681216012991202519, guid: 45f5485e8efdbf54eb16b270e1475a83, type: 3}
+      propertyPath: lifeEnemy
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f5485e8efdbf54eb16b270e1475a83, type: 3}
 --- !u!1001 &314487536
@@ -419,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimigo02
       objectReference: {fileID: 0}
+    - target: {fileID: 4695807909959652200, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4695807909959652201, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -462,6 +470,14 @@ PrefabInstance:
     - target: {fileID: 4695807909959652201, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695807910446285750, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695807910446285750, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.552
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}

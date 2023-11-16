@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7195632562098523918}
   - component: {fileID: 213798326172892017}
   - component: {fileID: 2610147000389707645}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyShoot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012537007592104671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 1.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 437271213219554729}
   - component: {fileID: 1898254347430776271}
   - component: {fileID: 761562730228033618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tiro_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
