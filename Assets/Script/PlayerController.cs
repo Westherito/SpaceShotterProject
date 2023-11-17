@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float vel;
     [SerializeField] private GameObject tiros;
     private float velTiro = 10f;
-    private int lifePlayer = 5;
+    private int lifePlayer = 3;
     [SerializeField] GameObject Morte;
     // Start is called before the first frame update
     void Start()
