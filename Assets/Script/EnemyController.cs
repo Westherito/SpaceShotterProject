@@ -9,7 +9,7 @@ public class EnemyController : EnemyFatherController
     [SerializeField] private GameObject enemyBullet;
 
     private float timerBullet = 1f;
-    private float velTiro = -5f;
+    [SerializeField] private float velTiro;
 
     [SerializeField] private Transform posTiro;
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class EnemyController : EnemyFatherController
 
         if (visible)
         {
-            // lterando a velocidade 
+            // Alterando a velocidade 
             rb.velocity = new Vector2(0f, vel);
             // Metodo de tiros
             EnemyTiros();
@@ -37,14 +37,16 @@ public class EnemyController : EnemyFatherController
         }
     }
     private void EnemyTiros() {
-        //instanciando tiros com delay
+        // Instanciando tiros com delay
         timerBullet -= Time.deltaTime;
         if (timerBullet < 0f)
         {
+            // Instanciando o tiro
             var enemyTiro = Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
-            enemyTiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
-            // Intervalos de tiros
-            timerBullet = Random.Range(1f, 1.5f);
+            // Aplicando velocidade para baixo
+            enemyTiro.GetComponent<Rigidbody2D>().velocity = Vector2.down * velTiro;
+            // Randomizando o próximo tiro
+            timerBullet = Random.Range(1.5f, 2f);
         }
     }
 }

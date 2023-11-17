@@ -9,7 +9,7 @@ public class EnemyController02 : EnemyFatherController
     [SerializeField] private GameObject enemyBullet;
 
     private float timerBullet = 1f;
-    private float velTiro = -3f;
+    [SerializeField] private float velTiro; 
 
     [SerializeField] private Transform posTiro;
     // Start is called before the first frame update
@@ -43,11 +43,17 @@ public class EnemyController02 : EnemyFatherController
         timerBullet -= Time.deltaTime;
         if (timerBullet < 0f)
         {
+            // Instanciando o tiro
             var enemyTiro = Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
-            enemyTiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
-            Instantiate(enemyBullet, posTiro.position, posTiro.rotation);
-
-            timerBullet = Random.Range(1.5f, 2f);
+            // Encontrando o player pelo script dele
+            var player = FindAnyObjectByType<PlayerController>();
+            // Subitraindo a posição do alvo com o tiro para dar a direção
+            Vector2 dir = player.transform.position - enemyTiro.transform.position;
+            dir.Normalize();
+            // Aplicando a direçao e velocidade para o tiro
+            enemyTiro.GetComponent<Rigidbody2D>().velocity = dir * velTiro;
+            // Intervalos de tiros
+            timerBullet = Random.Range(1f, 1.5f);
         }
     }
 }
