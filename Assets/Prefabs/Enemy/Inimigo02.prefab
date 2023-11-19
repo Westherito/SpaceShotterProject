@@ -51,6 +51,7 @@ MonoBehaviour:
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   vel: -1
   lifeEnemy: 2
+  posMovY: 3.04
   rb: {fileID: 4695807909959652200}
   enemyBullet: {fileID: 2012537007592104671, guid: b6015b70bd44165469fce0dd9373464c, type: 3}
   velTiro: 3
@@ -75,7 +76,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &4695807909959652203
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -86,7 +87,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

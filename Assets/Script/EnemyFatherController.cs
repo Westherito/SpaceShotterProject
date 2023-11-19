@@ -29,4 +29,14 @@ public class EnemyFatherController : MonoBehaviour
             Instantiate(Morte, transform.position, transform.rotation);
         }
     }
+
+    // Destruindo os Inimigos
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Destruidor")) 
+        {
+            Destroy(gameObject);
+            Instantiate(Morte, transform.position, transform.rotation);
+        }
+    }
 }
