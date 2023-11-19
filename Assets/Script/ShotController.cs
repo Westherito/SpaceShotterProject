@@ -25,7 +25,6 @@ public class ShotController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         // Colisão se algum objeto tiver o script descrito e utilizando as tags
-
         // Dano no inimigo
         if (collider.CompareTag("Inimigo"))
         {
