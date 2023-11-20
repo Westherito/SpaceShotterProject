@@ -22,16 +22,21 @@ public class EnemyFatherController : MonoBehaviour
 
     public void EnemyLife(int dano)
     {
-        lifeEnemy -= dano;
-        if (lifeEnemy <= 0)
+        if (transform.position.y < 5f)
         {
-            Destroy(gameObject);
-            Instantiate(Morte, transform.position, transform.rotation);
+            lifeEnemy -= dano;
+            if (lifeEnemy <= 0)
+            {
+                Destroy(gameObject);
+                Instantiate(Morte, transform.position, transform.rotation);
+
+                FindAnyObjectByType<GeradorInimigos>().GanhaPontos(10);
+            }
         }
     }
 
-    // Destruindo os Inimigos
-    private void OnTriggerEnter2D(Collider2D collision)
+        // Destruindo os Inimigos
+        private void OnTriggerEnter2D(Collider2D collision)
     {
         // destruindo com o player e causando dano
         if (collision.CompareTag("Jogador"))

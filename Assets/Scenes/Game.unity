@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266938476992642051, guid: cf7ed561154f9c948a6ca0997f26e39b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.18
       objectReference: {fileID: 0}
     - target: {fileID: 8266938476992642051, guid: cf7ed561154f9c948a6ca0997f26e39b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -666,11 +666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: level
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: intervaloTimer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 207122074111584503, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: m_Icon
