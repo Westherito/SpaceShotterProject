@@ -8,6 +8,7 @@ public class EnemyFatherController : MonoBehaviour
     [SerializeField] protected GameObject Morte;
     [SerializeField] protected float vel;
     [SerializeField] protected int lifeEnemy;
+    [SerializeField] protected int ponto = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,9 @@ public class EnemyFatherController : MonoBehaviour
                 Destroy(gameObject);
                 Instantiate(Morte, transform.position, transform.rotation);
 
-                FindAnyObjectByType<GeradorInimigos>().GanhaPontos(10);
+                var gerador = FindAnyObjectByType<GeradorInimigos>();
+                gerador.DiminuiQte();
+                gerador.GanhaPontos(ponto);
             }
         }
     }
@@ -43,12 +46,16 @@ public class EnemyFatherController : MonoBehaviour
         {
             collision.GetComponent<PlayerController>().PlayerLife(1);
             Destroy(gameObject);
+            var gerador = FindAnyObjectByType<GeradorInimigos>();
+            gerador.DiminuiQte();
             Instantiate(Morte, transform.position, transform.rotation);
         }
         // Destruindo com a parede 
-        if (collision.CompareTag("Destruidor")) 
+        if (collision.CompareTag("Destruidor"))
         {
             Destroy(gameObject);
+            var gerador = FindAnyObjectByType<GeradorInimigos>();
+            gerador.DiminuiQte();
             Instantiate(Morte, transform.position, transform.rotation);
         }
     }

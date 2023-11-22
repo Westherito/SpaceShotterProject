@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Gerador de inimigos
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47,4 +47,7 @@ MonoBehaviour:
   inimigos:
   - {fileID: 4681216012991202514, guid: 45f5485e8efdbf54eb16b270e1475a83, type: 3}
   - {fileID: 4695807909959652197, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
-  intervaloTimer: 3
+  pontos: 0
+  level: 5
+  baseLevel: 100
+  intervaloTimer: 5

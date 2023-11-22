@@ -51,10 +51,11 @@ MonoBehaviour:
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   vel: -1
   lifeEnemy: 2
+  ponto: 25
   posMovY: 3.04
   rb: {fileID: 4695807909959652200}
   enemyBullet: {fileID: 2012537007592104671, guid: b6015b70bd44165469fce0dd9373464c, type: 3}
-  velTiro: 3
+  velTiro: 2.5
   posTiro: {fileID: 4695807910446285750}
 --- !u!50 &4695807909959652200
 Rigidbody2D:
