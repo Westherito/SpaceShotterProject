@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,7 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject tiros;
     private float velTiro = 10f;
     private int lifePlayer = 3;
-    [SerializeField] GameObject Morte;
+    [SerializeField] private GameObject Morte;
+    [SerializeField] private float  xMin, yMin, xMax, yMax;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovimentoPlayer();
+        TirosPlayer();
     }
 
     private void MovimentoPlayer()
@@ -32,7 +35,13 @@ public class PlayerController : MonoBehaviour
         movPlayer.Normalize();
         // Passando para o player
         rbPlayer.velocity = movPlayer * vel;
-        TirosPlayer();
+
+        // Checando os limites do player na tela com Clamp
+        float limiteX = Mathf.Clamp(transform.position.x, xMin, xMax);
+        float limiteY = Mathf.Clamp(transform.position.y, yMin, yMax);
+        // Aplicando o limite 
+        transform.position = new Vector3(limiteX, limiteY, transform.position.z);
+
     }
     // Método para instanciar os tiros do player
     private void TirosPlayer()
@@ -44,7 +53,7 @@ public class PlayerController : MonoBehaviour
             
         }
     }
-
+    // Destruindo player caso ele perda todas as vidas e reiniciando o jogo
     public void PlayerLife(int dano)
     {
         lifePlayer -= dano;
@@ -54,8 +63,6 @@ public class PlayerController : MonoBehaviour
             Instantiate(Morte, transform.position, transform.rotation);
             Recomecar();
         }
-        // Testando a colisão
-        // Debug.Log(lifePlayer + " de vida do player!");
     }
     private void Recomecar()
     {
