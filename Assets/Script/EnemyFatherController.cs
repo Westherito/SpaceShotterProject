@@ -8,7 +8,7 @@ public class EnemyFatherController : MonoBehaviour
     [SerializeField] protected GameObject Morte;
     [SerializeField] protected float vel;
     [SerializeField] protected int lifeEnemy;
-    [SerializeField] protected int ponto = 10;
+    [SerializeField] protected int ponto;
     // Start is called before the first frame update
     void Start()
     {
