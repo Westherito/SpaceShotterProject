@@ -191,6 +191,7 @@ MonoBehaviour:
   ponto: 10
   rb: {fileID: 4681216012991202512}
   enemyBullet: {fileID: 5700473296240593810, guid: 9faa685426872e247a1ba84410987a59, type: 3}
+  timerBullet: 1
   velTiro: 3
   posTiro: {fileID: 1232408228}
 --- !u!50 &4681216012991202512

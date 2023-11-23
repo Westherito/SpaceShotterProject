@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyController : EnemyFatherController
 {
+    // Movimento
     [SerializeField] private Rigidbody2D rb;
-
+    // Tiros do inimigo
     [SerializeField] private GameObject enemyBullet;
-    private float timerBullet = 3f;
+    [SerializeField] private float timerBullet = 3f;
     [SerializeField] private float velTiro;
-
     [SerializeField] private Transform posTiro;
     // Start is called before the first frame update
     void Start()
@@ -25,14 +25,17 @@ public class EnemyController : EnemyFatherController
     {
         // Verificando se a sprite está visivel na tela
         bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
+        float limiteY = 5.16f;
 
         if (visible)
         {
             // Alterando a velocidade 
             rb.velocity = new Vector2(0f, vel);
             // Metodo de tiros
-            EnemyTiros();
-
+            if (transform.position.y < limiteY)
+            {
+                EnemyTiros();
+            }
         }
     }
     private void EnemyTiros()

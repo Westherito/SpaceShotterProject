@@ -9,7 +9,7 @@ public class EnemyController02 : EnemyFatherController
     private bool podeMov = true;
     // Tiro do inimigo
     [SerializeField] private GameObject enemyBullet;
-    private float timerBullet = 4f;
+    [SerializeField] private float timerBullet = 4f;
     [SerializeField] private float velTiro; 
     [SerializeField] private Transform posTiro;
 
@@ -30,7 +30,7 @@ public class EnemyController02 : EnemyFatherController
     {
         // Verificando se a sprite está visivel na tela
         bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
-
+        float limiteY = 5.16f;
         if (visible)
         {
             // Movimento do inimigo
@@ -49,7 +49,10 @@ public class EnemyController02 : EnemyFatherController
                 }
             }
             // Metodo de tiros
-            EnemyTiros();
+            if (transform.position.y < limiteY)
+            {
+                EnemyTiros();
+            }
         }
     }
     private void EnemyTiros()
