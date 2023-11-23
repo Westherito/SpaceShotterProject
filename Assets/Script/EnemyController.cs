@@ -53,7 +53,7 @@ public class EnemyController : EnemyFatherController
                 // Aplicando velocidade para baixo
                 enemyTiro.GetComponent<Rigidbody2D>().velocity = Vector2.down * velTiro;
                 // Randomizando o próximo tiro
-                timerBullet = Random.Range(1.5f, 2f);
+                timerBullet = Random.Range(1f, 1.5f);
             }
         }
     }

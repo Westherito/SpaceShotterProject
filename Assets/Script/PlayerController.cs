@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rbPlayer;
     private Vector2 movPlayer;
     [SerializeField] private float vel;
+    [SerializeField] private float timerBullet = 0.2f;
     [SerializeField] private GameObject tiros;
     private float velTiro = 10f;
     private int lifePlayer = 3;
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
         MovimentoPlayer();
         TirosPlayer();
     }
-
+    // Movimentação
     private void MovimentoPlayer()
     {
         // Pegando o Input do usuário e adicionando velocidade
@@ -43,14 +44,18 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(limiteX, limiteY, transform.position.z);
 
     }
-    // Método para instanciar os tiros do player
+    // Criando os tiros
     private void TirosPlayer()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            var playerTiro = Instantiate(tiros, transform.position, transform.rotation);
-            playerTiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
-            
+            timerBullet -= Time.deltaTime;
+            if (timerBullet < 0f)
+            {
+                var playerTiro = Instantiate(tiros, transform.position, transform.rotation);
+                playerTiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
+                timerBullet = 0.2f;
+            }
         }
     }
     // Destruindo player caso ele perda todas as vidas e reiniciando o jogo
@@ -64,6 +69,7 @@ public class PlayerController : MonoBehaviour
             Recomecar();
         }
     }
+    // Reinicio 
     private void Recomecar()
     {
         

@@ -22,21 +22,24 @@ public class GeradorInimigos : MonoBehaviour
     {
         GeraInimigo();
     }
-
+    // Gerando Inimigos
     private void GeraInimigo()
     {
+        // Timer para controla o tempo que gera os inimigos
         if (timer > 0f && qteInimigos <= 0)
         {
             timer -= Time.deltaTime;
         }
+        // Gerando os inimigos
         if (timer <= 0f && qteInimigos <= 0)
         {
-            int numInimigos = level * 3;
-
+            // Quantide de inimigos na tela
+            int numInimigos = level * 5;
+            
             while (numInimigos > qteInimigos)
             {
                 GameObject inimigoCriado;
-
+                // Chance de gerar outro tipod e inimigo
                 float chance = Random.Range(0, level);
                 if (chance > 2f)
                 {
@@ -46,11 +49,11 @@ public class GeradorInimigos : MonoBehaviour
                 {
                     inimigoCriado = inimigos[0];
                 }
-
+                // Posição onde Gera o inimigo
                 Vector3 pos = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 17f), 0f);
-
+                // Criando o inimigo no jogo
                 Instantiate(inimigoCriado, pos, transform.rotation);
-
+                
                 qteInimigos++;
 
                 timer = intervaloTimer;

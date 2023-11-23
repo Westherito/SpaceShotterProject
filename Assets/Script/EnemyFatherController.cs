@@ -20,7 +20,7 @@ public class EnemyFatherController : MonoBehaviour
     {
 
     }
-
+    // Vida dos inimigos e checagem de dano
     public void EnemyLife(int dano)
     {
         if (transform.position.y < 5f)
@@ -37,9 +37,8 @@ public class EnemyFatherController : MonoBehaviour
             }
         }
     }
-
-        // Destruindo os Inimigos
-        private void OnTriggerEnter2D(Collider2D collision)
+    // Destruindo os Inimigos
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // destruindo com o player e causando dano
         if (collision.CompareTag("Jogador"))

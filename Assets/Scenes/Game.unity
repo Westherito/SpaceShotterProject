@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: yMin
       value: -4.4
       objectReference: {fileID: 0}
+    - target: {fileID: 8266938476992642050, guid: cf7ed561154f9c948a6ca0997f26e39b, type: 3}
+      propertyPath: timerBullet
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8266938476992642051, guid: cf7ed561154f9c948a6ca0997f26e39b, type: 3}
       propertyPath: m_RootOrder
       value: 1

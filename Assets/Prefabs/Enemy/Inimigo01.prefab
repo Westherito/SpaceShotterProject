@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
-  vel: -1.5
+  vel: -1
   lifeEnemy: 1
   ponto: 10
   rb: {fileID: 4681216012991202512}

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
-  vel: -1
+  vel: -0.7
   lifeEnemy: 2
   ponto: 25
   posMovY: 3.04
