@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
         movPlayer.Normalize();
         // Passando para o player
         rbPlayer.velocity = movPlayer * vel;
-
         // Checando os limites do player na tela com Clamp
         float limiteX = Mathf.Clamp(transform.position.x, xMin, xMax);
         float limiteY = Mathf.Clamp(transform.position.y, yMin, yMax);
