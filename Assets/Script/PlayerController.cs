@@ -5,15 +5,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Movimentação
     [SerializeField] private Rigidbody2D rbPlayer;
     private Vector2 movPlayer;
     [SerializeField] private float vel;
-    [SerializeField] private float timerBullet = 0.2f;
+    // Tiros do Player
+    [SerializeField] private float timerBullet = 0.1f;
     [SerializeField] private GameObject tiros;
+    [SerializeField] private GameObject tiros2;
     private float velTiro = 10f;
+    [SerializeField] private int levelTiro = 1;
+    // Vida do player
     private int lifePlayer = 3;
     [SerializeField] private GameObject Morte;
-    [SerializeField] private float  xMin, yMin, xMax, yMax;
+    // Limite de tela
+    [SerializeField] private float xMin, yMin, xMax, yMax;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,19 +49,57 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(limiteX, limiteY, transform.position.z);
 
     }
-    // Criando os tiros
+    // Criando os tiros no jogo com sistema de level
     private void TirosPlayer()
     {
+
         if (Input.GetButton("Fire1"))
         {
             timerBullet -= Time.deltaTime;
-            if (timerBullet < 0f)
+            switch (levelTiro)
             {
-                var playerTiro = Instantiate(tiros, transform.position, transform.rotation);
-                playerTiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
-                timerBullet = 0.2f;
+                case 1:
+                    if (timerBullet < 0f)
+                    {
+                        CriaTiro(tiros, transform.position);
+                        timerBullet = 0.1f;
+                    }
+                    break;
+
+                case 2:
+                    if (timerBullet < 0f)
+                    {
+                        // Tiro esquerdo
+                        Vector3 posTiroE = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros2, posTiroE);
+                        // Tiro direito
+                        Vector3 posTiroD = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros2, posTiroD);
+                        timerBullet = 0.1f;
+                    }
+                    break;
+                case 3:
+                    if (timerBullet < 0f)
+                    {
+                        CriaTiro(tiros, transform.position);
+                        // Tiro esquerdo
+                        Vector3 posTiroE = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros2, posTiroE);
+                        // Tiro direito
+                        Vector3 posTiroD = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros2, posTiroD);
+                        timerBullet = 0.05f;
+                    }
+                    break;
             }
         }
+    }
+    // Criando os tiros com base no tipo de tiro recebido
+    private void CriaTiro(GameObject playerTiro, Vector3 pos)
+    {
+        GameObject Tiro;
+        Tiro = Instantiate(playerTiro, pos, transform.rotation);
+        Tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
     }
     // Destruindo player caso ele perda todas as vidas e reiniciando o jogo
     public void PlayerLife(int dano)
@@ -71,6 +115,6 @@ public class PlayerController : MonoBehaviour
     // Reinicio 
     private void Recomecar()
     {
-        
+
     }
 }

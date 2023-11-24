@@ -155,8 +155,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbPlayer: {fileID: 8266938476992642173}
   vel: 7
+  timerBullet: 0.1
   tiros: {fileID: 1615298817570157269, guid: eb5949e4765eb5c4e9017f7e8a8ce297, type: 3}
+  tiros2: {fileID: 0}
+  levelTiro: 2
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
+  xMin: -8.316
+  yMin: -4.4
+  xMax: 8.316
+  yMax: 4.4
 --- !u!50 &8266938476992642173
 Rigidbody2D:
   serializedVersion: 4
