@@ -70,11 +70,11 @@ public class PlayerController : MonoBehaviour
                     if (timerBullet < 0f)
                     {
                         // Tiro esquerdo
-                        Vector3 posTiroE = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.1f, 0f);
-                        CriaTiro(tiros2, posTiroE);
+                        Vector3 posTiro = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros2, posTiro);
                         // Tiro direito
-                        Vector3 posTiroD = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.1f, 0f);
-                        CriaTiro(tiros2, posTiroD);
+                        posTiro = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros2, posTiro);
                         timerBullet = 0.1f;
                     }
                     break;
