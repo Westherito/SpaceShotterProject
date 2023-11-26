@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
                     if (timerBullet < 0f)
                     {
                         CriaTiro(tiros, transform.position);
-                        timerBullet = 0.1f;
+                        timerBullet = 0.18f;
                     }
                     break;
 
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
                         // Tiro direito
                         posTiro = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.1f, 0f);
                         CriaTiro(tiros2, posTiro);
-                        timerBullet = 0.1f;
+                        timerBullet = 0.12f;
                     }
                     break;
                 case 3:
@@ -110,6 +110,15 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             Instantiate(Morte, transform.position, transform.rotation);
             Recomecar();
+        }
+    }
+    // Colisão com o PowerUp
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PowerUp"))
+        {
+            levelTiro++;
+            Destroy(collision.gameObject);
         }
     }
     // Reinicio 

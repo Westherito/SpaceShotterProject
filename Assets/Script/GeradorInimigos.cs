@@ -34,7 +34,7 @@ public class GeradorInimigos : MonoBehaviour
         if (timer <= 0f && qteInimigos <= 0)
         {
             // Quantide de inimigos na tela
-            int numInimigos = level * 5;
+            int numInimigos = level * 4;
             
             while (numInimigos > qteInimigos)
             {
