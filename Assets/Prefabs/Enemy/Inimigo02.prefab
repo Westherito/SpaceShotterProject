@@ -52,6 +52,8 @@ MonoBehaviour:
   vel: -0.7
   lifeEnemy: 2
   ponto: 25
+  powerUp: {fileID: 2268544868576005371, guid: 031b96ff94dab664e91f0c6cbaf83bd7, type: 3}
+  dropItem: 0.7
   posMovY: 3.04
   rb: {fileID: 4695807909959652200}
   enemyBullet: {fileID: 2012537007592104671, guid: b6015b70bd44165469fce0dd9373464c, type: 3}

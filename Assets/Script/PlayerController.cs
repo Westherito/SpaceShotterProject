@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float velTiro = 10f;
     [SerializeField] private int levelTiro = 1;
     // Vida do player
-    private int lifePlayer = 3;
+    [SerializeField] private int lifePlayer = 3;
     [SerializeField] private GameObject Morte;
     // Limite de tela
     [SerializeField] private float xMin, yMin, xMax, yMax;
@@ -91,6 +91,19 @@ public class PlayerController : MonoBehaviour
                         timerBullet = 0.05f;
                     }
                     break;
+                case 4:
+                    if (timerBullet < 0f)
+                    {
+                        CriaTiro(tiros2, transform.position);
+                        // Tiro esquerdo
+                        Vector3 posTiroE = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros, posTiroE);
+                        // Tiro direito
+                        Vector3 posTiroD = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.1f, 0f);
+                        CriaTiro(tiros, posTiroD);
+                        timerBullet = 0.05f;
+                    }
+                    break;
             }
         }
     }
@@ -119,7 +132,12 @@ public class PlayerController : MonoBehaviour
         {
             levelTiro++;
             Destroy(collision.gameObject);
+            if (levelTiro >= 4)
+            {
+                levelTiro = 4;
+            }
         }
+        
     }
     // Reinicio 
     private void Recomecar()
