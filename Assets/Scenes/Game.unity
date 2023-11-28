@@ -293,6 +293,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2268544868576005371, guid: 031b96ff94dab664e91f0c6cbaf83bd7, type: 3}
     - target: {fileID: 8266938476992642050, guid: cf7ed561154f9c948a6ca0997f26e39b, type: 3}
+      propertyPath: rbEscudo
+      value: 
+      objectReference: {fileID: 1801857894}
+    - target: {fileID: 8266938476992642050, guid: cf7ed561154f9c948a6ca0997f26e39b, type: 3}
       propertyPath: levelTiro
       value: 1
       objectReference: {fileID: 0}
@@ -636,9 +640,11 @@ GameObject:
   - component: {fileID: 1801857891}
   - component: {fileID: 1801857890}
   - component: {fileID: 1801857892}
-  m_Layer: 0
+  - component: {fileID: 1801857893}
+  - component: {fileID: 1801857894}
+  m_Layer: 7
   m_Name: Escudo
-  m_TagString: Untagged
+  m_TagString: Destruidor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,8 +709,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801857889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.019, y: -3.895, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.019, y: -4.04, z: 1}
+  m_LocalScale: {x: 0.91, y: 0.91, z: 0.91}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -731,6 +737,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &1801857893
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801857889}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022637486, y: 0.018864632}
+  serializedVersion: 2
+  m_Radius: 1.0962269
+--- !u!50 &1801857894
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801857889}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &207122072851002287
 PrefabInstance:
   m_ObjectHideFlags: 0

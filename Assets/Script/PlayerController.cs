@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject tiros2;
     private float velTiro = 10f;
     [SerializeField] private int levelTiro = 1;
+    [SerializeField] Rigidbody2D rbEscudo;
     // Vida do player
     [SerializeField] private int lifePlayer = 3;
     [SerializeField] private GameObject Morte;
@@ -42,11 +43,13 @@ public class PlayerController : MonoBehaviour
         movPlayer.Normalize();
         // Passando para o player
         rbPlayer.velocity = movPlayer * vel;
+        rbEscudo.velocity = movPlayer * vel;
         // Checando os limites do player na tela com Clamp
         float limiteX = Mathf.Clamp(transform.position.x, xMin, xMax);
         float limiteY = Mathf.Clamp(transform.position.y, yMin, yMax);
         // Aplicando o limite 
         transform.position = new Vector3(limiteX, limiteY, transform.position.z);
+        rbEscudo.transform.position = new Vector3(limiteX, limiteY, transform.position.z);
 
     }
     // Criando os tiros no jogo com sistema de level
