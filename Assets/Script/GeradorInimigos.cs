@@ -59,13 +59,15 @@ public class GeradorInimigos : MonoBehaviour
                 }
                 // Posição onde Gera o inimigo
                 Vector3 pos = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 17f), 0f);
-                //checando se exite algum inimigo no local
+                // Checando se existe algum inimigo no local
                 bool check = CheckPos(pos, inimigoCriado.transform.localScale);
                 // Criando o inimigo no jogo
-                if (!check)
+                if (check)
                 {
-                    Instantiate(inimigoCriado, pos, transform.rotation);
+                    // Pulando etapa de criação de inimigo caso exista colisão com outro inimigo
+                    continue;
                 }
+                Instantiate(inimigoCriado, pos, transform.rotation);
                 qteInimigos++;
 
                 timer = intervaloTimer;
@@ -88,7 +90,9 @@ public class GeradorInimigos : MonoBehaviour
     // Checando se existe um colisor no local criado
     private bool CheckPos(Vector3 pos, Vector3 size)
     {
+        // Usando a fisica para checa se existe colisor
         Collider2D hit = Physics2D.OverlapBox(pos,size,0f);
+        // retornando valores booleanos
         if (hit == null)
         {
             return false;

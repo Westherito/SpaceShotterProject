@@ -12,7 +12,7 @@ public class EnemyFatherController : MonoBehaviour
     [SerializeField] protected int ponto;
     [SerializeField] private GameObject powerUp;
     [SerializeField] protected float dropItem;
-    // Vida dos inimigos e checagem de dano
+    // Vida dos inimigos, checagem de dano e ganhando pontos
     public void EnemyLife(int dano)
     {
         if (transform.position.y < 5f)
@@ -24,10 +24,15 @@ public class EnemyFatherController : MonoBehaviour
                 Instantiate(Morte, transform.position, transform.rotation);
                 GeraPowerUp();
                 var gerador = FindAnyObjectByType<GeradorInimigos>();
-                gerador.DiminuiQte();
                 gerador.GanhaPontos(ponto);
-            } 
+            }
         }
+    }
+    // Evento que funciona quando o objeto é destruido
+    private void OnDestroy()
+    {
+        var gerador = FindAnyObjectByType<GeradorInimigos>();
+        gerador.DiminuiQte();
     }
     // Gerando Power ups para o player
     public void GeraPowerUp()
@@ -50,8 +55,6 @@ public class EnemyFatherController : MonoBehaviour
         {
             collision.GetComponent<PlayerController>().PlayerLife(1);
             Destroy(gameObject);
-            var gerador = FindAnyObjectByType<GeradorInimigos>();
-            gerador.DiminuiQte();
             Instantiate(Morte, transform.position, transform.rotation);
             GeraPowerUp();
         }
@@ -59,8 +62,6 @@ public class EnemyFatherController : MonoBehaviour
         if (collision.CompareTag("Destruidor"))
         {
             Destroy(gameObject);
-            var gerador = FindAnyObjectByType<GeradorInimigos>();
-            gerador.DiminuiQte();
             Instantiate(Morte, transform.position, transform.rotation);
         }
     }
