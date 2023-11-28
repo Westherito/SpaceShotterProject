@@ -35,9 +35,17 @@ public class GeradorInimigos : MonoBehaviour
         {
             // Quantide de inimigos na tela
             int numInimigos = level * 4;
-            
+            int tentativas = 0;
             while (numInimigos > qteInimigos)
             {
+                // Controlando o laço para evitar travamentos
+                tentativas++;
+                if (tentativas > 500)
+                {
+                    break;
+                }
+
+                // Inicio da geração de inimigos
                 GameObject inimigoCriado;
                 // Chance de gerar outro tipod e inimigo
                 float chance = Random.Range(0, level);
@@ -51,15 +59,20 @@ public class GeradorInimigos : MonoBehaviour
                 }
                 // Posição onde Gera o inimigo
                 Vector3 pos = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 17f), 0f);
+                //checando se exite algum inimigo no local
+                bool check = CheckPos(pos, inimigoCriado.transform.localScale);
                 // Criando o inimigo no jogo
-                Instantiate(inimigoCriado, pos, transform.rotation);
-                
+                if (!check)
+                {
+                    Instantiate(inimigoCriado, pos, transform.rotation);
+                }
                 qteInimigos++;
 
                 timer = intervaloTimer;
             }
         }
     }
+    // Ganhando pontos
     public void GanhaPontos(int pontos)
     {
         // Ganhando e acumulando pontos
@@ -72,7 +85,19 @@ public class GeradorInimigos : MonoBehaviour
             baseLevel *= this.level;
         }
     }
-
+    // Checando se existe um colisor no local criado
+    private bool CheckPos(Vector3 pos, Vector3 size)
+    {
+        Collider2D hit = Physics2D.OverlapBox(pos,size,0f);
+        if (hit == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
     public void DiminuiQte()
     {
         qteInimigos--;
