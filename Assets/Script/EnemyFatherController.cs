@@ -32,13 +32,16 @@ public class EnemyFatherController : MonoBehaviour
     private void OnDestroy()
     {
         var gerador = FindAnyObjectByType<GeradorInimigos>();
-        gerador.DiminuiQte();
+        if (gerador)
+        {
+            gerador.DiminuiQte();
+        }
     }
     // Gerando Power ups para o player
     public void GeraPowerUp()
     {
         // calculando chance de drop
-        float chance = Random.Range(0f, 1f);
+        float chance = Random.Range(0f,1f);
         if (chance > 0.9f) // 10% de chance de gerar o item
         {
             GameObject criaPowerUp = Instantiate(powerUp, transform.position, transform.rotation);
