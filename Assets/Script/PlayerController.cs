@@ -111,7 +111,6 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
-
     }
     // Método do escudo
     private void EscudoPlayer()
