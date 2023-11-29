@@ -15,8 +15,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject tiros2;
     private float velTiro = 10f;
     [SerializeField] private int levelTiro = 1;
+    // Escudo do player
     [SerializeField] private GameObject escudo;
     private GameObject escudoAtual;
+    private float timerEscudo = 0f;
+    [SerializeField] private int qteEscudo = 3;
     // Vida do player
     [SerializeField] private int lifePlayer = 3;
     [SerializeField] private GameObject Morte;
@@ -113,14 +116,23 @@ public class PlayerController : MonoBehaviour
     // Método do escudo
     private void EscudoPlayer()
     {
-
-
-            if (Input.GetButtonDown("Shield"))
+        if (Input.GetButtonDown("Shield") && qteEscudo > 0)
+        {
+            // Criando escudo se não tiver nenhum no jogo
+            if (!escudoAtual) { escudoAtual = Instantiate(escudo, transform.position, transform.rotation); }
+        }
+        if (escudoAtual)
+        {
+            // Determinando o tempo do escudo e a posição
+            escudoAtual.transform.position = transform.position;
+            timerEscudo += Time.deltaTime;
+            if (timerEscudo > 9.2f)
             {
-                escudoAtual = Instantiate(escudo, transform.position, transform.rotation);
+                qteEscudo--;
+                Destroy(escudoAtual);
+                timerEscudo = 0f;
             }
-            if (escudoAtual) { escudoAtual.transform.position = transform.position; }
-
+        }
     }
     // Criando os tiros com base no tipo de tiro recebido
     private void CriaTiro(GameObject playerTiro, Vector3 pos)
@@ -152,7 +164,7 @@ public class PlayerController : MonoBehaviour
                 levelTiro = 4;
             }
         }
-        
+
     }
     // Reinicio 
     private void Recomecar()

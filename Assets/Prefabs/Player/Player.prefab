@@ -160,6 +160,7 @@ MonoBehaviour:
   tiros2: {fileID: 1764469913159859888, guid: b0696382faa24394ca235c2b83db8e7b, type: 3}
   levelTiro: 1
   escudo: {fileID: 1606021989777767949, guid: 4a142b41898ec634ea91f51e4e2a7cb6, type: 3}
+  qteEscudo: 3
   lifePlayer: 30
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   xMin: -8.316
