@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 4681216012991202514, guid: 45f5485e8efdbf54eb16b270e1475a83, type: 3}
   - {fileID: 4695807909959652197, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
   pontos: 0
-  level: 5
+  level: 1
   baseLevel: 100
-  intervaloTimer: 5
+  intervaloTimer: 2
+  qteInimigos: 0
