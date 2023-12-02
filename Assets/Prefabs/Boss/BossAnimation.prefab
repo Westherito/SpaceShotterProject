@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3747972023747758302}
   - component: {fileID: 3747972023747758303}
   - component: {fileID: 3747972023747758297}
+  - component: {fileID: 2511135825293241612}
   m_Layer: 6
   m_Name: boss_surgindo
   m_TagString: Untagged
@@ -106,6 +107,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2511135825293241612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747972023747758300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5db7aca7ccb4624da9c6df41cd27009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boss: {fileID: 7137636115709597607, guid: b6e145d83eeb18d4b8745256e6464c59, type: 3}
 --- !u!1 &3747972023752717504
 GameObject:
   m_ObjectHideFlags: 0
