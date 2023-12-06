@@ -64,6 +64,7 @@ public class BossController : EnemyFatherController
     }
     private void Estado2()
     {
+        rb.velocity = Vector2.zero;
         TiroBoss2();
     }
     private void Estado3()
@@ -97,7 +98,7 @@ public class BossController : EnemyFatherController
             // escolhendo o estado
             int est = Random.Range(0,3);
             estadoAtual = estados[est];
-            timerEstado = 10f;
+            timerEstado = 5f;
         }
     }
     private void TiroBoss1()
@@ -196,17 +197,9 @@ public class BossController : EnemyFatherController
 
                 /// Instanciando o tiro do meio 
                 enemyTiro = Instantiate(tiroBoss, posTiroMid.position, posTiroMid.rotation);
-                // Subitraindo a posição do alvo com o tiro para dar a direção
-                dir = player.transform.position - enemyTiro.transform.position;
-                dir.Normalize();
-                // Aplicando a direçao e velocidade para o tiro
-                enemyTiro.GetComponent<Rigidbody2D>().velocity = dir * vel;
-                // Intervalos de tiros
-                // Adicionando Angulo que o tiro tem que estar
-                // Nesse código ele calcula o angulo em um raio e é multiplicado pela conversão de raio para graus.
-                angulo = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                // Executando a rotação em direção ao Alvo
-                enemyTiro.transform.rotation = Quaternion.Euler(0f, 0f, angulo + 90f);
+                // Aplicando velocidade para baixo
+                enemyTiro.GetComponent<Rigidbody2D>().velocity = Vector2.down * vel;
+                // Randomizando o próximo tiro
 
                 timerBullet = delayTiro;
             }
