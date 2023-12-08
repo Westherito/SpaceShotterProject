@@ -3,7 +3,7 @@ using UnityEngine;
 public class BossController : EnemyFatherController
 {
     // Estados do Boss e movimento
-    [SerializeField] private string estadoAtual = "estado1";
+    private string estadoAtual = "estado1";
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D col;
     [SerializeField] private float limiteX, limiteY;
@@ -12,9 +12,9 @@ public class BossController : EnemyFatherController
     [SerializeField] private Transform posTiroMid, posTiroDir, posTiroEsq;
     [SerializeField] private GameObject tiroBoss;
     private float timerBullet;
-    [SerializeField] private float delayTiro;
+    private float delayTiro = 1f;
     [SerializeField] private string[] estados;
-    [SerializeField] private float timerEstado = 10f;
+    private float timerEstado = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,7 +98,7 @@ public class BossController : EnemyFatherController
             // escolhendo o estado
             int est = Random.Range(0,3);
             estadoAtual = estados[est];
-            timerEstado = 5f;
+            timerEstado = 10f;
         }
     }
     private void TiroBoss1()

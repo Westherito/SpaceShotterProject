@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 87792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tiroBossMid
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1438274425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tiroBossDir
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925972005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tiroBossEsq
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -106,7 +106,8 @@ GameObject:
   - component: {fileID: 7137636115709597604}
   - component: {fileID: 3963874861926158578}
   - component: {fileID: 5162083121596337355}
-  m_Layer: 0
+  - component: {fileID: 1364149945}
+  m_Layer: 6
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +202,6 @@ MonoBehaviour:
   ponto: 1000
   powerUp: {fileID: 0}
   dropItem: 0
-  estado: estado3
   rb: {fileID: 5162083121596337355}
   col: {fileID: 0}
   limiteX: 6.11
@@ -210,7 +210,6 @@ MonoBehaviour:
   posTiroDir: {fileID: 1438274425}
   posTiroEsq: {fileID: 1925972005}
   tiroBoss: {fileID: 4323196566042879677, guid: 01c0c1110de10ad498c2c2c46cc3c692, type: 3}
-  delayTiro: 1
   estados:
   - estado1
   - estado2
@@ -257,3 +256,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &1364149945
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137636115709597607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.027969122, y: 0.9340384}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.64, y: 4.32}
+    newSize: {x: 5.64, y: 4.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.332337, y: 1.8365974}
+  m_EdgeRadius: 0
