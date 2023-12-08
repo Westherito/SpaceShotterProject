@@ -161,7 +161,7 @@ MonoBehaviour:
   levelTiro: 3
   escudo: {fileID: 1606021989777767949, guid: 4a142b41898ec634ea91f51e4e2a7cb6, type: 3}
   qteEscudo: 3
-  lifePlayer: 30
+  lifePlayer: 1000
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   xMin: -8.316
   yMin: -4.4
