@@ -18,16 +18,16 @@ public class BossController : EnemyFatherController
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         TrocaEstado();
-        switch (estadoAtual) 
+        switch (estadoAtual)
         {
-            case "estado1" :
+            case "estado1":
                 Estado1();
                 break;
             case "estado2":
@@ -38,6 +38,7 @@ public class BossController : EnemyFatherController
                 break;
         }
     }
+
 
     private void Estado1()
     {
@@ -96,7 +97,7 @@ public class BossController : EnemyFatherController
         if (timerEstado <= 0f)
         {
             // escolhendo o estado
-            int est = Random.Range(0,3);
+            int est = Random.Range(0, 3);
             estadoAtual = estados[est];
             timerEstado = 10f;
         }

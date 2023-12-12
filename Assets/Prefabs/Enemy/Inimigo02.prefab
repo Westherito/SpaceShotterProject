@@ -50,9 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   vel: -0.7
-  lifeEnemy: 4
-  ponto: 25
+  lifeEnemy: 3
+  ponto: 50
   powerUp: {fileID: 2268544868576005371, guid: 031b96ff94dab664e91f0c6cbaf83bd7, type: 3}
+  Boss: {fileID: 0}
   dropItem: 0.9
   posMovY: 3.04
   rb: {fileID: 4695807909959652200}
@@ -170,7 +171,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -163040319, guid: b2fd3a4da145e0d48a91ad4b8eb43333, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

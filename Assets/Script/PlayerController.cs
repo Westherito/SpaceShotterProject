@@ -117,21 +117,12 @@ public class PlayerController : MonoBehaviour
                         Vector3 posTiroE = new Vector3(transform.position.x - 0.2f, transform.position.y + 0.1f, 0f);
                         CriaTiro(tiros, posTiroE);
                         posTiroE = new Vector3(transform.position.x - 0.6f, transform.position.y - 0.2f, 0f);
-                        CriaTiro(tiros, posTiroE);
+                        CriaTiro(tiros2, posTiroE);
                         // Tiro direito
                         Vector3 posTiroD = new Vector3(transform.position.x + 0.2f, transform.position.y + 0.1f, 0f);
                         CriaTiro(tiros, posTiroD);
                         posTiroD = new Vector3(transform.position.x + 0.6f, transform.position.y - 0.2f, 0f);
-                        CriaTiro(tiros, posTiroD);
-                        if (enemy)
-                        {
-                            var tirosTele = Instantiate(tiros2, transform.position, transform.rotation);
-                            Vector2 dir = enemy.transform.position - tiros2.transform.position;
-                            dir.Normalize();
-                            tirosTele.GetComponent<Rigidbody2D>().velocity = dir * velTiro / 2;
-                            float angulo = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                            tirosTele.transform.rotation = Quaternion.Euler(0f, 0f, angulo + 90f);
-                        }
+                        CriaTiro(tiros2, posTiroD);
                         timerBullet = 0.10f;
                     }
                     break;

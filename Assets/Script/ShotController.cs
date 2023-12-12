@@ -32,6 +32,10 @@ public class ShotController : MonoBehaviour
         {
             collider.GetComponent<PlayerController>().PlayerLife(1);
         }
+        if (collider.CompareTag("Boss"))
+        {
+            collider.GetComponent<EnemyFatherController>().BossLife(1);
+        }
         // Destruindo os tiros
         Destroy(gameObject);
         Instantiate(explosao, transform.position, transform.rotation);

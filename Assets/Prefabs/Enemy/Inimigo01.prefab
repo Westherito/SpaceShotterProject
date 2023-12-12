@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 597259269, guid: dec9934d7937f3449bce54e09b8a1ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -188,8 +188,9 @@ MonoBehaviour:
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   vel: -1
   lifeEnemy: 2
-  ponto: 10
+  ponto: 25
   powerUp: {fileID: 2268544868576005371, guid: 031b96ff94dab664e91f0c6cbaf83bd7, type: 3}
+  Boss: {fileID: 0}
   dropItem: 0.09
   rb: {fileID: 4681216012991202512}
   enemyBullet: {fileID: 5700473296240593810, guid: 9faa685426872e247a1ba84410987a59, type: 3}

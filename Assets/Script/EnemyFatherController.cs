@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class EnemyFatherController : MonoBehaviour
 {
-
     [SerializeField] protected GameObject Morte;
     [SerializeField] protected float vel;
     [SerializeField] protected int lifeEnemy;
     [SerializeField] protected int ponto;
     [SerializeField] private GameObject powerUp;
+    [SerializeField] protected GameObject Boss;
     [SerializeField] protected float dropItem;
     // Vida dos inimigos, checagem de dano e ganhando pontos
     public void EnemyLife(int dano)
@@ -28,6 +28,19 @@ public class EnemyFatherController : MonoBehaviour
             }
         }
     }
+
+    public void BossLife(int dano)
+    {
+        lifeEnemy -= dano;
+        if (lifeEnemy <= 0)
+        {
+            var gerador = FindAnyObjectByType<GeradorInimigos>();
+            gerador.GanhaPontos(ponto);
+            GameObject animBoss = Instantiate(Morte, Vector3.zero, transform.rotation);
+            Destroy(animBoss, 6.47f);
+            Destroy(Boss);
+        }
+    }
     // Evento que funciona quando o objeto é destruido
     private void OnDestroy()
     {
@@ -41,7 +54,7 @@ public class EnemyFatherController : MonoBehaviour
     public void GeraPowerUp()
     {
         // calculando chance de drop
-        float chance = Random.Range(0f,1f);
+        float chance = Random.Range(0f, 1f);
         if (chance > 0.9f) // 10% de chance de gerar o item
         {
             GameObject criaPowerUp = Instantiate(powerUp, transform.position, transform.rotation);

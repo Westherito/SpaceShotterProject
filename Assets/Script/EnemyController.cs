@@ -24,10 +24,9 @@ public class EnemyController : EnemyFatherController
     private void EnemyMov()
     {
         // Verificando se a sprite está visivel na tela
-        bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
         float limiteY = 5.16f;
 
-        if (visible)
+        if (this != null)
         {
             // Alterando a velocidade 
             rb.velocity = new Vector2(0f, vel);

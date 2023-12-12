@@ -170,6 +170,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8977011725612595111, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977011725612595111, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -609,7 +613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: level
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: bossAnim
@@ -640,13 +644,17 @@ PrefabInstance:
       propertyPath: levelTiro
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3089593200911277658, guid: e31efc142f9efd1429f6d64158086bdc, type: 3}
+      propertyPath: lifePlayer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3089593200911277659, guid: e31efc142f9efd1429f6d64158086bdc, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3089593200911277659, guid: e31efc142f9efd1429f6d64158086bdc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3089593200911277659, guid: e31efc142f9efd1429f6d64158086bdc, type: 3}
       propertyPath: m_LocalPosition.y

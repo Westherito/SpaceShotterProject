@@ -93,7 +93,7 @@ public class GeradorInimigos : MonoBehaviour
         if (!checkBoss && timer <= 0f)
         {
             GameObject animBoss = Instantiate(bossAnim, Vector3.zero, transform.rotation);
-            Destroy(animBoss, 6.10f);
+            Destroy(animBoss, 6.05f);
             checkBoss = true;
         }
     }
