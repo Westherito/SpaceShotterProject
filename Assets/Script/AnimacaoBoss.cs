@@ -20,5 +20,7 @@ public class AnimacaoBoss : MonoBehaviour
     private void SpawnBoss()
     {
         Instantiate(Boss, transform.position, transform.rotation);
+        var father = transform.parent.gameObject;
+        Destroy(father);
     }
 }

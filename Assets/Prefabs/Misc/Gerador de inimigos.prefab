@@ -48,7 +48,8 @@ MonoBehaviour:
   - {fileID: 4681216012991202514, guid: 45f5485e8efdbf54eb16b270e1475a83, type: 3}
   - {fileID: 4695807909959652197, guid: 11e81fb8df3e754468d2be7959cd1abc, type: 3}
   pontos: 0
-  level: 1
+  level: 9
   baseLevel: 100
   intervaloTimer: 2
   qteInimigos: 0
+  bossAnim: {fileID: 3747972023752717504, guid: 42a7d2266a1eb1c458c28e14da7ffb44, type: 3}

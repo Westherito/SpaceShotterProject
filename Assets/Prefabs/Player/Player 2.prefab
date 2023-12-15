@@ -52,10 +52,10 @@ MonoBehaviour:
   timerBullet: 0.1
   tiros: {fileID: 1615298817570157269, guid: eb5949e4765eb5c4e9017f7e8a8ce297, type: 3}
   tiros2: {fileID: 1764469913159859888, guid: b0696382faa24394ca235c2b83db8e7b, type: 3}
-  levelTiro: 3
+  levelTiro: 2
   escudo: {fileID: 1606021989777767949, guid: 4a142b41898ec634ea91f51e4e2a7cb6, type: 3}
   qteEscudo: 3
-  lifePlayer: 1000
+  lifePlayer: 10
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   xMin: -8.316
   yMin: -4.4
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 710265809
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 336299079, guid: b91add0628bb7b242bb0c4f43d739bd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -34,11 +34,13 @@ public class EnemyFatherController : MonoBehaviour
         lifeEnemy -= dano;
         if (lifeEnemy <= 0)
         {
-            var gerador = FindAnyObjectByType<GeradorInimigos>();
-            gerador.GanhaPontos(ponto);
-            GameObject animBoss = Instantiate(Morte, Vector3.zero, transform.rotation);
-            Destroy(animBoss, 6.47f);
             Destroy(Boss);
+            Instantiate(Morte, transform.position, transform.rotation);
+            var gerador = FindAnyObjectByType<GeradorInimigos>();
+            if (gerador)
+            {
+                gerador.GanhaPontos(ponto);
+            }
         }
     }
     // Evento que funciona quando o objeto é destruido
@@ -69,16 +71,27 @@ public class EnemyFatherController : MonoBehaviour
         // destruindo com o player e causando dano
         if (collision.CompareTag("Jogador"))
         {
-            collision.GetComponent<PlayerController>().PlayerLife(1);
-            Destroy(gameObject);
-            Instantiate(Morte, transform.position, transform.rotation);
-            GeraPowerUp();
+            if (gameObject == Boss)
+            {
+                collision.GetComponent<PlayerController>().PlayerLife(1000);
+            }
+            else
+            {
+                collision.GetComponent<PlayerController>().PlayerLife(1);
+                Destroy(gameObject);
+                Instantiate(Morte, transform.position, transform.rotation);
+                GeraPowerUp();
+            }
+
         }
         // Destruindo com a parede 
         if (collision.CompareTag("Destruidor"))
         {
-            Destroy(gameObject);
-            Instantiate(Morte, transform.position, transform.rotation);
+            if (!gameObject == Boss)
+            {
+                Destroy(gameObject);
+                Instantiate(Morte, transform.position, transform.rotation);
+            }
         }
     }
 }

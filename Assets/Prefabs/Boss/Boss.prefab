@@ -170,8 +170,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -395494379
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -734360512, guid: afbecdbe1a58e8d4a81cf0637d682200, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Morte: {fileID: 665639908850493681, guid: 586c5eae0d53b0340851ddf9286bf6d8, type: 3}
   vel: 3
-  lifeEnemy: 1000
-  ponto: 1000
+  lifeEnemy: 500
+  ponto: 500
   powerUp: {fileID: 0}
   Boss: {fileID: 7137636115709597607}
   dropItem: 0

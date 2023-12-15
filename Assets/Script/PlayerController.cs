@@ -164,6 +164,7 @@ public class PlayerController : MonoBehaviour
         if (lifePlayer <= 0)
         {
             Destroy(gameObject);
+            Destroy(escudoAtual);
             Instantiate(Morte, transform.position, transform.rotation);
             Recomecar();
         }
@@ -180,7 +181,6 @@ public class PlayerController : MonoBehaviour
                 levelTiro = 5;
             }
         }
-
     }
     // Reinicio 
     private void Recomecar()
