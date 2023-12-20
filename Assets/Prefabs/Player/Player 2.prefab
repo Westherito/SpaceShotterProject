@@ -52,7 +52,7 @@ MonoBehaviour:
   timerBullet: 0.1
   tiros: {fileID: 1615298817570157269, guid: eb5949e4765eb5c4e9017f7e8a8ce297, type: 3}
   tiros2: {fileID: 1764469913159859888, guid: b0696382faa24394ca235c2b83db8e7b, type: 3}
-  levelTiro: 2
+  levelTiro: 1
   escudo: {fileID: 1606021989777767949, guid: 4a142b41898ec634ea91f51e4e2a7cb6, type: 3}
   qteEscudo: 3
   lifePlayer: 10
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.007782191, y: -0.082224846}
+  m_Offset: {x: 0.0000030398369, y: -0.09779525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -106,7 +106,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59936136, y: 0.7130027}
+  m_Size: {x: 0.31909323, y: 0.7441435}
   m_EdgeRadius: 0
 --- !u!1 &8515204745641016849
 GameObject:

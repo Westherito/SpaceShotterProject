@@ -180,6 +180,10 @@ public class PlayerController : MonoBehaviour
             {
                 levelTiro = 5;
             }
+            if (qteEscudo <= 0)
+            {
+                qteEscudo++;
+            }
         }
     }
     // Reinicio 
