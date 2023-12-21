@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GeradorInimigos : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GeradorInimigos : MonoBehaviour
     [SerializeField] private float intervaloTimer = 5f;
     [SerializeField] private int qteInimigos = 0;
     [SerializeField] private GameObject bossAnim;
+    [SerializeField] private GameObject Player;
     private bool checkBoss = false;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,12 @@ public class GeradorInimigos : MonoBehaviour
         {
             GeraBoss();
         }
+        if (!Player)
+        {
+            Recomecar();
+        }
+
+
     }
     // Gerando Inimigos
     private void GeraInimigo()
@@ -83,7 +91,7 @@ public class GeradorInimigos : MonoBehaviour
             }
         }
     }
-
+    // Gerando Boss
     private void GeraBoss()
     {
         if (qteInimigos <= 0 && timer > 0f)
@@ -113,7 +121,7 @@ public class GeradorInimigos : MonoBehaviour
     private bool CheckPos(Vector3 pos, Vector3 size)
     {
         // Usando a fisica para checa se existe colisor
-        Collider2D hit = Physics2D.OverlapBox(pos,size,0f);
+        Collider2D hit = Physics2D.OverlapBox(pos, size, 0f);
         // retornando valores booleanos
         if (hit == null)
         {
@@ -122,6 +130,22 @@ public class GeradorInimigos : MonoBehaviour
         else
         {
             return true;
+        }
+    }
+
+    // Reinicio 
+    public void Recomecar()
+    {
+        
+        if (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+        }
+        else if (timer <= 0f)
+        {
+
+            timer = intervaloTimer;
+            SceneManager.LoadScene(0);
         }
     }
     public void DiminuiQte()

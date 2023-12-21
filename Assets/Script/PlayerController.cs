@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,18 +25,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject Morte;
     // Limite de tela
     [SerializeField] private float xMin, yMin, xMax, yMax;
+    // Mostrando as informações do player
+    [SerializeField] private Text vidaDisplay, EscudoDisplay;
     // Start is called before the first frame update
     void Start()
     {
-
     }
-
     // Update is called once per frame
     void Update()
     {
         MovimentoPlayer();
         TirosPlayer();
         EscudoPlayer();
+        vidaDisplay.text = lifePlayer.ToString();
+        EscudoDisplay.text = qteEscudo.ToString();
     }
     // Movimentação
     private void MovimentoPlayer()
@@ -163,10 +165,20 @@ public class PlayerController : MonoBehaviour
         lifePlayer -= dano;
         if (lifePlayer <= 0)
         {
+            vidaDisplay.text = "0";
+            Recomecar();
             Destroy(gameObject);
             Destroy(escudoAtual);
             Instantiate(Morte, transform.position, transform.rotation);
-            Recomecar();
+        }
+    }
+    private void Recomecar()
+    {
+        float timer = 0f;
+        timer += Time.deltaTime;
+        if (timer > 6f)
+        {
+            SceneManager.LoadScene(0);
         }
     }
     // Colisão com o PowerUp
@@ -185,10 +197,5 @@ public class PlayerController : MonoBehaviour
                 qteEscudo++;
             }
         }
-    }
-    // Reinicio 
-    private void Recomecar()
-    {
-
     }
 }
