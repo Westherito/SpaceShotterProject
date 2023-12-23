@@ -96,7 +96,7 @@ public class BossController : EnemyFatherController
         timerEstado -= Time.deltaTime;
         if (timerEstado <= 0f)
         {
-            // escolhendo o estado
+            // Escolhendo o estado
             int est = Random.Range(0, 3);
             estadoAtual = estados[est];
             timerEstado = 10f;

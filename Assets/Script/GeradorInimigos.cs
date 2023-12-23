@@ -10,6 +10,7 @@ public class GeradorInimigos : MonoBehaviour
     [SerializeField] private int level = 1;
     [SerializeField] private int baseLevel = 100;
     private float timer = 0f;
+    private float timerRestart = 0f;
     [SerializeField] private float intervaloTimer = 5f;
     [SerializeField] private int qteInimigos = 0;
     [SerializeField] private GameObject bossAnim;
@@ -18,9 +19,7 @@ public class GeradorInimigos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -112,9 +111,11 @@ public class GeradorInimigos : MonoBehaviour
         if (this.pontos >= baseLevel)
         {
             // Aumentando o nivel
-            this.level++;
+            level++;
             // Aumentando o requisito para o nivel
-            baseLevel *= this.level;
+
+            if (level < 3) { baseLevel *= level; }
+            if (level >= 4) { baseLevel *= level / 2; }
         }
     }
     // Checando se existe um colisor no local criado
@@ -132,20 +133,16 @@ public class GeradorInimigos : MonoBehaviour
             return true;
         }
     }
-
     // Reinicio 
     public void Recomecar()
-    {
-        
-        if (timer > 0f)
+    {     
+        if (timerRestart >= 6f)
         {
-            timer -= Time.deltaTime;
-        }
-        else if (timer <= 0f)
-        {
-
-            timer = intervaloTimer;
             SceneManager.LoadScene(0);
+        }
+        else if (timerRestart <= 6f)
+        {
+            timerRestart += Time.deltaTime;
         }
     }
     public void DiminuiQte()

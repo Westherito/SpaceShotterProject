@@ -166,19 +166,9 @@ public class PlayerController : MonoBehaviour
         if (lifePlayer <= 0)
         {
             vidaDisplay.text = "0";
-            Recomecar();
             Destroy(gameObject);
             Destroy(escudoAtual);
             Instantiate(Morte, transform.position, transform.rotation);
-        }
-    }
-    private void Recomecar()
-    {
-        float timer = 0f;
-        timer += Time.deltaTime;
-        if (timer > 6f)
-        {
-            SceneManager.LoadScene(0);
         }
     }
     // Colisão com o PowerUp
