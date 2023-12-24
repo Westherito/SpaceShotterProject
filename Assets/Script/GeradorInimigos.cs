@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +15,7 @@ public class GeradorInimigos : MonoBehaviour
     [SerializeField] private GameObject bossAnim;
     [SerializeField] private GameObject Player;
     private bool checkBoss = false;
+    [SerializeField] private Text LevelDisplay, pontosDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,8 @@ public class GeradorInimigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        LevelDisplay.text = level.ToString();
+        pontosDisplay.text = pontos.ToString();
         if (level < 10)
         {
             GeraInimigo();
@@ -35,8 +37,6 @@ public class GeradorInimigos : MonoBehaviour
         {
             Recomecar();
         }
-
-
     }
     // Gerando Inimigos
     private void GeraInimigo()
@@ -110,12 +110,12 @@ public class GeradorInimigos : MonoBehaviour
         this.pontos += pontos;
         if (this.pontos >= baseLevel)
         {
+
             // Aumentando o nivel
             level++;
+            LevelDisplay.text = level.ToString();
             // Aumentando o requisito para o nivel
-
-            if (level < 3) { baseLevel *= level; }
-            if (level >= 4) { baseLevel *= level / 2; }
+            baseLevel *= level;
         }
     }
     // Checando se existe um colisor no local criado

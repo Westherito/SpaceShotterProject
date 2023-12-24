@@ -1,8 +1,6 @@
-using UnityEditor.SearchService;
+
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
 public class PlayerController : MonoBehaviour
 {
     // Movimentação
