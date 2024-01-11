@@ -749,6 +749,14 @@ PrefabInstance:
       propertyPath: pontosDisplay
       value: 
       objectReference: {fileID: 6169527}
+    - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
+      propertyPath: inimigos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
+      propertyPath: inimigos.Array.data[2]
+      value: 
+      objectReference: {fileID: 6223153341816328754, guid: 39124f1a58194a848a498e7be06b43f7, type: 3}
     - target: {fileID: 207122074111584503, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: m_Name
       value: Gerador de inimigos
@@ -863,9 +871,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1772443105183883563, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 28.046783
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772443105183883563, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.900406
+      objectReference: {fileID: 0}
     - target: {fileID: 1772443105619901122, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772443105619901123, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.466156
       objectReference: {fileID: 0}
     - target: {fileID: 1772443106152757866, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
       propertyPath: m_Layer
@@ -978,6 +998,10 @@ PrefabInstance:
     - target: {fileID: 1772443106962346466, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772443106962346467, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -57.100098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}

@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnemyController02 : EnemyFatherController
+
+public class EnemyController03 : EnemyFatherController
 {
     // Movimentação
-    [SerializeField] private float posMovY;
     [SerializeField] private Rigidbody2D rb;
-    private bool podeMov = true;
     // Tiro do inimigo
     [SerializeField] private GameObject enemyBullet;
-    [SerializeField] private float timerBullet = 4f;
-    [SerializeField] private float velTiro; 
+    [SerializeField] private float timerBullet = 2f;
+    [SerializeField] private float velTiro;
     [SerializeField] private Transform posTiro;
-
     // Start is called before the first frame update
     void Start()
     {
-        ponto = Random.Range(100, 500);
+        ponto = Random.Range(500, 1000);
         // Alterando a velocidade inicial
         rb.velocity = new Vector2(0f, vel);
     }
@@ -29,26 +27,14 @@ public class EnemyController02 : EnemyFatherController
     private void EnemyMov()
     {
         // Verificando se a sprite está visivel na tela
-        float limiteY = 5.16f;
+        float limiteY = 5;
+
         if (this != null)
         {
-            // Movimento do inimigo
-            // Alterando a direção do inimigo
-            if (transform.position.y < posMovY && podeMov == true)
-            {
-                if (transform.position.x < 0)
-                {
-                    rb.velocity = new Vector2(vel * -1f, vel);
-                    podeMov = false;
-                }
-                else
-                {
-                    rb.velocity = new Vector2(vel * 1f, vel);
-                    podeMov = false;
-                }
-            }
+            // Alterando a velocidade 
+            rb.velocity = new Vector2(0f, vel);
             // Metodo de tiros
-            if (transform.position.y < limiteY)
+            if (transform.position.y <= limiteY)
             {
                 EnemyTiros();
             }
@@ -71,7 +57,7 @@ public class EnemyController02 : EnemyFatherController
                 // Aplicando a direçao e velocidade para o tiro
                 enemyTiro.GetComponent<Rigidbody2D>().velocity = dir * velTiro;
                 // Intervalos de tiros
-                timerBullet = Random.Range(1f, 1.5f);
+                timerBullet = Random.Range(0.5f, 0.9f);
 
                 // Adicionando Angulo que o tiro tem que estar
                 // Nesse código ele calcula o angulo em um raio e é multiplicado pela conversão de raio para graus.
@@ -82,6 +68,3 @@ public class EnemyController02 : EnemyFatherController
         }
     }
 }
-
-
-

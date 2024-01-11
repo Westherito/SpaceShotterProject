@@ -65,7 +65,11 @@ public class GeradorInimigos : MonoBehaviour
                 GameObject inimigoCriado;
                 // Chance de gerar outro tipod e inimigo
                 float chance = Random.Range(0, level);
-                if (chance > 1f)
+                if (chance > 3f)
+                {
+                    inimigoCriado = inimigos[2];
+                }
+                else if (chance > 1f)
                 {
                     inimigoCriado = inimigos[1];
                 }

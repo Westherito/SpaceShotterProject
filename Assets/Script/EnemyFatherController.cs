@@ -8,7 +8,7 @@ public class EnemyFatherController : MonoBehaviour
     [SerializeField] protected GameObject Morte;
     [SerializeField] protected float vel;
     [SerializeField] protected int lifeEnemy;
-    [SerializeField] protected int ponto;
+    protected int ponto;
     [SerializeField] private GameObject powerUp;
     [SerializeField] protected GameObject Boss;
     [SerializeField] protected float dropItem;

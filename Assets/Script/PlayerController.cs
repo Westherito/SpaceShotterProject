@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
             }
             if (qteEscudo <= 0)
             {
-                qteEscudo++;
+                qteEscudo = 3;
             }
         }
     }
