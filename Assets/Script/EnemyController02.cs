@@ -16,7 +16,8 @@ public class EnemyController02 : EnemyFatherController
     // Start is called before the first frame update
     void Start()
     {
-        ponto = Random.Range(100, 500);
+        //ponto = Random.Range(100, 500);
+        ponto = 500;
         // Alterando a velocidade inicial
         rb.velocity = new Vector2(0f, vel);
     }

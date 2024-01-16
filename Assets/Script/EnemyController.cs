@@ -14,7 +14,8 @@ public class EnemyController : EnemyFatherController
     // Start is called before the first frame update
     void Start()
     {
-        ponto = Random.Range(1, 100);
+        //ponto = Random.Range(1, 100);
+        ponto = 100;
         timerBullet = Random.Range(0.5f, 2f);
     }
     // Update is called once per frame

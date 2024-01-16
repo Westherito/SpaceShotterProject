@@ -54,6 +54,10 @@ public class GeradorInimigos : MonoBehaviour
             int tentativas = 0;
             while (numInimigos > qteInimigos)
             {
+                if (level >= 6)
+                {
+                    numInimigos = level * 8;
+                }
                 // Controlando o laço para evitar travamentos
                 tentativas++;
                 if (tentativas > 500)
@@ -65,7 +69,7 @@ public class GeradorInimigos : MonoBehaviour
                 GameObject inimigoCriado;
                 // Chance de gerar outro tipod e inimigo
                 float chance = Random.Range(0, level);
-                if (chance > 3f)
+                if (chance > 4f)
                 {
                     inimigoCriado = inimigos[2];
                 }
@@ -114,12 +118,15 @@ public class GeradorInimigos : MonoBehaviour
         this.pontos += pontos;
         if (this.pontos >= baseLevel)
         {
-
             // Aumentando o nivel
             level++;
             LevelDisplay.text = level.ToString();
             // Aumentando o requisito para o nivel
             baseLevel *= level;
+            if (level >= 6)
+            {
+                baseLevel /= 2;
+            }
         }
     }
     // Checando se existe um colisor no local criado
