@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BossController : EnemyFatherController
 {
     // Estados do Boss e movimento
@@ -13,17 +13,22 @@ public class BossController : EnemyFatherController
     [SerializeField] private GameObject tiroBoss;
     private float timerBullet;
     private float delayTiro = 1f;
+    // Vida do boss e estados
+    [SerializeField] private Image lifeBoss;
+    [SerializeField] private int lifeMax;
     [SerializeField] private string[] estados;
     private float timerEstado = 10f;
+   
     // Start is called before the first frame update
     void Start()
     {
-
+        lifeEnemy = lifeMax;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // máquina de estados
         TrocaEstado();
         switch (estadoAtual)
         {
@@ -37,6 +42,8 @@ public class BossController : EnemyFatherController
                 Estado3();
                 break;
         }
+        // Barra de vida do boss
+        lifeBoss.fillAmount = ((float)lifeEnemy / (float)lifeMax);
     }
 
 
