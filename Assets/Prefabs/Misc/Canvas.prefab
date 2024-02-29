@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6169526}
   - component: {fileID: 6169528}
   - component: {fileID: 6169527}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: pontos numero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 48727579}
   - component: {fileID: 48727581}
   - component: {fileID: 48727580}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: lvl numero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,10 +113,10 @@ RectTransform:
   m_Father: {fileID: 1772443106549450271}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4376563, y: 0.9392222}
-  m_AnchorMax: {x: 0.5635625, y: 0.982389}
-  m_AnchoredPosition: {x: 104, y: 0.5}
-  m_SizeDelta: {x: 0, y: -1}
+  m_AnchorMin: {x: 0.79187506, y: 0.10722223}
+  m_AnchorMax: {x: 0.9882188, y: 0.15083332}
+  m_AnchoredPosition: {x: 66.5, y: 0.5}
+  m_SizeDelta: {x: -89, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &48727581
 CanvasRenderer:
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 190666288}
   - component: {fileID: 190666290}
   - component: {fileID: 190666289}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Pontos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 1128033570}
   - component: {fileID: 1128033572}
   - component: {fileID: 1128033571}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,10 +273,10 @@ RectTransform:
   m_Father: {fileID: 1772443106549450271}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4376563, y: 0.9392222}
-  m_AnchorMax: {x: 0.5635625, y: 0.982389}
-  m_AnchoredPosition: {x: -1, y: 0.5}
-  m_SizeDelta: {x: 0, y: -1}
+  m_AnchorMin: {x: 0.79187506, y: 0.10722223}
+  m_AnchorMax: {x: 0.9882188, y: 0.15083332}
+  m_AnchoredPosition: {x: -41.5, y: 0}
+  m_SizeDelta: {x: -91, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1128033572
 CanvasRenderer:
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 1772443105183883563}
   - component: {fileID: 1772443105183883561}
   - component: {fileID: 1772443105183883560}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Vida Texto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.029312504, y: 0.1183889}
   m_AnchorMax: {x: 0.157, y: 0.1772685}
-  m_AnchoredPosition: {x: 28.046173, y: -2.900406}
+  m_AnchoredPosition: {x: 28.047516, y: -2.900406}
   m_SizeDelta: {x: 0, y: 17.489998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1772443105183883561
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 1772443105619901123}
   - component: {fileID: 1772443105619901121}
   - component: {fileID: 1772443105619901120}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Escudo texto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03078125, y: 0.03746302}
   m_AnchorMax: {x: 0.157, y: 0.09744444}
-  m_AnchoredPosition: {x: 26.466644, y: -2.085083}
+  m_AnchoredPosition: {x: 26.465424, y: -2.085083}
   m_SizeDelta: {x: 0, y: 15.880005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1772443105619901121
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 1772443106152757867}
   - component: {fileID: 1772443106152757865}
   - component: {fileID: 1772443106152757864}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Vida Imagem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,9 +568,9 @@ GameObject:
   - component: {fileID: 1772443106549450270}
   - component: {fileID: 1772443106549450257}
   - component: {fileID: 1772443106549450256}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -621,7 +621,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1841972547
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1772443106549450257
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 1772443106962346467}
   - component: {fileID: 1772443106962346465}
   - component: {fileID: 1772443106962346464}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Escudo imagem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03078125, y: 0.03746302}
   m_AnchorMax: {x: 0.157, y: 0.09744444}
-  m_AnchoredPosition: {x: -57.099976, y: 0.5}
+  m_AnchoredPosition: {x: -57.100098, y: 0.5}
   m_SizeDelta: {x: -92.36, y: 20.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1772443106962346465

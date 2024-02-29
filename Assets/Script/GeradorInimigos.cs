@@ -126,6 +126,10 @@ public class GeradorInimigos : MonoBehaviour
             if (level >= 6)
             {
                 baseLevel /= 2;
+                if (level >= 8)
+                {
+                    baseLevel /= 3;
+                }
             }
         }
     }
