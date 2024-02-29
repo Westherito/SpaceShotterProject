@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private AudioSource[] SoundFX;
     // Movimentação
     [SerializeField] private Rigidbody2D rbPlayer;
     private Vector2 movPlayer;
@@ -135,7 +136,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Shield") && qteEscudo > 0)
         {
             // Criando escudo se não tiver nenhum no jogo
-            if (!escudoAtual) { escudoAtual = Instantiate(escudo, transform.position, transform.rotation); }
+            if (!escudoAtual) { escudoAtual = Instantiate(escudo, transform.position, transform.rotation); SoundFX[2].Play(); }
         }
         if (escudoAtual)
         {
@@ -156,11 +157,13 @@ public class PlayerController : MonoBehaviour
         GameObject Tiro;
         Tiro = Instantiate(playerTiro, pos, transform.rotation);
         Tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
+        SoundFX[0].Play();
     }
     // Destruindo player caso ele perda todas as vidas e reiniciando o jogo
     public void PlayerLife(int dano)
     {
         lifePlayer -= dano;
+        SoundFX[1].Play();
         if (lifePlayer <= 0)
         {
             vidaDisplay.text = "0";
@@ -176,6 +179,7 @@ public class PlayerController : MonoBehaviour
         {
             levelTiro++;
             Destroy(collision.gameObject);
+            SoundFX[3].Play();
             if (levelTiro >= 5)
             {
                 levelTiro = 5;

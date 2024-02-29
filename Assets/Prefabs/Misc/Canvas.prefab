@@ -319,7 +319,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level:'
+  m_Text: 'Wave:'
 --- !u!1 &1772443105183883562
 GameObject:
   m_ObjectHideFlags: 0
