@@ -163,7 +163,6 @@ public class PlayerController : MonoBehaviour
     public void PlayerLife(int dano)
     {
         lifePlayer -= dano;
-        SoundFX[1].Play();
         if (lifePlayer <= 0)
         {
             vidaDisplay.text = "0";

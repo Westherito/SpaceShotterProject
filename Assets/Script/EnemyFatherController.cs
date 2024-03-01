@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyFatherController : MonoBehaviour
 {
+    [SerializeField] protected AudioSource MorteFx;
     [SerializeField] protected GameObject Morte;
     [SerializeField] protected float vel;
     [SerializeField] protected int lifeEnemy;
@@ -34,6 +35,7 @@ public class EnemyFatherController : MonoBehaviour
         lifeEnemy -= dano;
         if (lifeEnemy <= 0)
         {
+            MorteFx.Play();
             Destroy(Boss);
             Instantiate(Morte, transform.position, transform.rotation);
             var gerador = FindAnyObjectByType<GeradorInimigos>();

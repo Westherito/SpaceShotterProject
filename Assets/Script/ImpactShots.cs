@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ImpactShots : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class ImpactShots : MonoBehaviour
     //Aplicando método com animação da sprite
     public void Destruir()
     {
+        
         Destroy(gameObject);
     }
 }
