@@ -18,7 +18,7 @@ public class BossController : EnemyFatherController
     [SerializeField] private int lifeMax;
     [SerializeField] private string[] estados;
     private float timerEstado = 10f;
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,8 +45,6 @@ public class BossController : EnemyFatherController
         // Barra de vida do boss
         lifeBoss.fillAmount = ((float)lifeEnemy / (float)lifeMax);
     }
-
-
     private void Estado1()
     {
         // mudando a direção do boss direita e esquerda

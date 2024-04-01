@@ -20,15 +20,18 @@ public class PlayerController : MonoBehaviour
     private float timerEscudo = 0f;
     [SerializeField] private int qteEscudo = 3;
     // Vida do player
-    [SerializeField] private int lifePlayer = 3;
+    private int lifePlayer;
     [SerializeField] private GameObject Morte;
     // Limite de tela
     [SerializeField] private float xMin, yMin, xMax, yMax;
     // Mostrando as informações do player
-    [SerializeField] private Text vidaDisplay, EscudoDisplay;
+    [SerializeField] private Text EscudoDisplay;
+    [SerializeField] private Image vidaDisplay;
+    [SerializeField] private int lifeMax;
     // Start is called before the first frame update
     void Start()
     {
+        lifePlayer = lifeMax;
     }
     // Update is called once per frame
     void Update()
@@ -36,7 +39,7 @@ public class PlayerController : MonoBehaviour
         MovimentoPlayer();
         TirosPlayer();
         EscudoPlayer();
-        vidaDisplay.text = lifePlayer.ToString();
+        vidaDisplay.fillAmount = ((float)lifePlayer / (float)lifeMax);
         EscudoDisplay.text = qteEscudo.ToString();
     }
     // Movimentação
@@ -163,9 +166,9 @@ public class PlayerController : MonoBehaviour
     public void PlayerLife(int dano)
     {
         lifePlayer -= dano;
+        vidaDisplay.fillAmount = lifePlayer;
         if (lifePlayer <= 0)
         {
-            vidaDisplay.text = "0";
             Destroy(gameObject);
             Destroy(escudoAtual);
             Instantiate(Morte, transform.position, transform.rotation);
