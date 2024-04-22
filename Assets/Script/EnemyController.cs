@@ -27,7 +27,6 @@ public class EnemyController : EnemyFatherController
     {
         // Verificando se a sprite está visivel na tela
         float limiteY = 5.16f;
-
         if (this != null)
         {
             // Alterando a velocidade 

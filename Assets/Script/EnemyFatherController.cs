@@ -11,6 +11,7 @@ public class EnemyFatherController : MonoBehaviour
     [SerializeField] protected int lifeEnemy;
     protected int ponto;
     [SerializeField] private GameObject powerUp;
+    [SerializeField] private GameObject lifeUp;
     [SerializeField] protected GameObject Boss;
     [SerializeField] protected float dropItem;
     // Vida dos inimigos, checagem de dano e ganhando pontos
@@ -35,7 +36,7 @@ public class EnemyFatherController : MonoBehaviour
         lifeEnemy -= dano;
         if (lifeEnemy <= 0)
         {
-            MorteFx.Play();
+            //MorteFx.Play();
             Destroy(Boss);
             Instantiate(Morte, transform.position, transform.rotation);
             var gerador = FindAnyObjectByType<GeradorInimigos>();
@@ -65,6 +66,13 @@ public class EnemyFatherController : MonoBehaviour
             var dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             criaPowerUp.GetComponent<Rigidbody2D>().velocity = dir;
             Destroy(criaPowerUp, 3f);
+        }
+        if (chance > 0.7f) // 30% de chance de gerar o item
+        {
+            GameObject crialifeUp = Instantiate(lifeUp, transform.position, transform.rotation);
+            var dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            crialifeUp.GetComponent<Rigidbody2D>().velocity = dir;
+            Destroy(crialifeUp, 3f);
         }
     }
     // Destruindo os Inimigos

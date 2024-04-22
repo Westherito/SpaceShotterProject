@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
     // Colisão com o PowerUp
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PowerUp"))
+        if (collision.CompareTag("PowerUp"))//Recompensa PowerUp
         {
             levelTiro++;
             Destroy(collision.gameObject);
@@ -190,6 +190,20 @@ public class PlayerController : MonoBehaviour
             {
                 qteEscudo = 3;
             }
+        }
+        if (collision.CompareTag("Life"))//Recompensa Vida
+        {
+            lifePlayer += 2;
+            Destroy(collision.gameObject);
+            SoundFX[3].Play();
+        }
+        if (collision.CompareTag("Escudo"))//Recompensa Escudo
+        {
+
+        }
+        if (collision.CompareTag("Special"))//Recompensa Special
+        {
+
         }
     }
 }

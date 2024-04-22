@@ -122,6 +122,7 @@ MonoBehaviour:
   vel: -0.5
   lifeEnemy: 5
   powerUp: {fileID: 2268544868576005371, guid: 031b96ff94dab664e91f0c6cbaf83bd7, type: 3}
+  lifeUp: {fileID: 6208150113965368966, guid: a2f35d5ed366cb94f87140f5b808a97d, type: 3}
   Boss: {fileID: 0}
   dropItem: 0.95
   rb: {fileID: 917642259576567547}
@@ -141,7 +142,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: def231f33770f6a4e94be9563fa6bc8e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.502
+  m_Volume: 0.207
   m_Pitch: -1.15
   Loop: 0
   Mute: 0
