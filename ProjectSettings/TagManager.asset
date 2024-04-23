@@ -9,6 +9,9 @@ TagManager:
   - Destruidor
   - PowerUp
   - Boss
+  - Escudo
+  - Life
+  - Special
   layers:
   - Default
   - TransparentFX
