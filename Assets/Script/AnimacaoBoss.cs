@@ -10,13 +10,11 @@ public class AnimacaoBoss : MonoBehaviour
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
         
     }
-
     private void SpawnBoss()
     {
         Instantiate(Boss, transform.position, transform.rotation);

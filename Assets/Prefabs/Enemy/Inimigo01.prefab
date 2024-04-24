@@ -192,6 +192,8 @@ MonoBehaviour:
   lifeEnemy: 2
   powerUp: {fileID: 2268544868576005371, guid: 031b96ff94dab664e91f0c6cbaf83bd7, type: 3}
   lifeUp: {fileID: 6208150113965368966, guid: a2f35d5ed366cb94f87140f5b808a97d, type: 3}
+  escudoUp: {fileID: 267845546905657383, guid: 2bdba051765c1d04e82f74fd9f2ad0a5, type: 3}
+  specialUp: {fileID: 5730353902009646907, guid: b65337405a780364fa3207f44dec8e66, type: 3}
   Boss: {fileID: 0}
   dropItem: 0.09
   rb: {fileID: 4681216012991202512}

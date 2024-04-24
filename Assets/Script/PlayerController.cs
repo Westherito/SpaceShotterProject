@@ -186,10 +186,6 @@ public class PlayerController : MonoBehaviour
             {
                 levelTiro = 5;
             }
-            if (qteEscudo <= 0)
-            {
-                qteEscudo = 3;
-            }
         }
         if (collision.CompareTag("Life"))//Recompensa Vida
         {
@@ -200,10 +196,20 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Escudo"))//Recompensa Escudo
         {
 
+            Destroy(collision.gameObject);
+            SoundFX[3].Play();
+            if (qteEscudo == 0)
+            {
+                qteEscudo = 3;
+            }
         }
         if (collision.CompareTag("Special"))//Recompensa Special
         {
-
+            Destroy(collision.gameObject);
+            levelTiro = 5;
+            lifePlayer = 10;
+            qteEscudo = 3;
+            SoundFX[3].Play();
         }
     }
 }

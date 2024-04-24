@@ -12,6 +12,8 @@ public class EnemyFatherController : MonoBehaviour
     protected int ponto;
     [SerializeField] private GameObject powerUp;
     [SerializeField] private GameObject lifeUp;
+    [SerializeField] private GameObject escudoUp;
+    [SerializeField] private GameObject specialUp;
     [SerializeField] protected GameObject Boss;
     [SerializeField] protected float dropItem;
     // Vida dos inimigos, checagem de dano e ganhando pontos
@@ -30,8 +32,7 @@ public class EnemyFatherController : MonoBehaviour
             }
         }
     }
-
-    public void BossLife(int dano)
+    public void BossLife(int dano) // Checando se o boss leva dano
     {
         lifeEnemy -= dano;
         if (lifeEnemy <= 0)
@@ -60,20 +61,35 @@ public class EnemyFatherController : MonoBehaviour
     {
         // calculando chance de drop
         float chance = Random.Range(0f, 1f);
-        if (chance > 0.9f) // 10% de chance de gerar o item
+        if (chance > 0.9f) // 10% de chance de gerar o Power Up
         {
             GameObject criaPowerUp = Instantiate(powerUp, transform.position, transform.rotation);
             var dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             criaPowerUp.GetComponent<Rigidbody2D>().velocity = dir;
             Destroy(criaPowerUp, 3f);
         }
-        if (chance > 0.7f) // 30% de chance de gerar o item
+        if (chance > 0.95f) // 5% de chance de gerar a vida
         {
             GameObject crialifeUp = Instantiate(lifeUp, transform.position, transform.rotation);
             var dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             crialifeUp.GetComponent<Rigidbody2D>().velocity = dir;
             Destroy(crialifeUp, 3f);
         }
+        if (chance > 0.95f) // 5% de chance de gerar o escudo
+        {
+            GameObject criaEscudoUp = Instantiate(escudoUp, transform.position, transform.rotation);
+            var dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            criaEscudoUp.GetComponent<Rigidbody2D>().velocity = dir;
+            Destroy(criaEscudoUp, 3f);
+        }
+        if (chance > 0.99f) // 1% de chance de gerar o special
+        {
+            GameObject criaSpecialUp = Instantiate(specialUp, transform.position, transform.rotation);
+            var dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            criaSpecialUp.GetComponent<Rigidbody2D>().velocity = dir;
+            Destroy(criaSpecialUp, 3f);
+        }
+        
     }
     // Destruindo os Inimigos
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,9 +97,9 @@ public class EnemyFatherController : MonoBehaviour
         // destruindo com o player e causando dano
         if (collision.CompareTag("Jogador"))
         {
-            if (gameObject == Boss)
+            if (gameObject == Boss)// Caso player colidir com Boss
             {
-                collision.GetComponent<PlayerController>().PlayerLife(1000);
+                collision.GetComponent<PlayerController>().PlayerLife(1000);// Fazendo o player morrer instantaneamente
             }
             else
             {
@@ -92,7 +108,6 @@ public class EnemyFatherController : MonoBehaviour
                 Instantiate(Morte, transform.position, transform.rotation);
                 GeraPowerUp();
             }
-
         }
         // Destruindo com a parede 
         if (collision.CompareTag("Destruidor"))
