@@ -184,17 +184,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2145042278, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
+      propertyPath: m_Volume
+      value: 0.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145042278, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
       propertyPath: MaxDistance
-      value: 5.9773254
+      value: 2.0833895
       objectReference: {fileID: 0}
     - target: {fileID: 2145042278, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
       propertyPath: MinDistance
-      value: 4.055313
+      value: 1.6376493
       objectReference: {fileID: 0}
     - target: {fileID: 2145042278, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: b4a5d4df89f23cd40a260b9dae321c59, type: 3}
+      objectReference: {fileID: 8300000, guid: 0b8089bc47697d646a839b316eb9c2ff, type: 3}
     - target: {fileID: 8977011725612595035, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
       propertyPath: m_Name
       value: Main Camera

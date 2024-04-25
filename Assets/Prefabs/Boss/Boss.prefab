@@ -588,8 +588,11 @@ MonoBehaviour:
   MorteFx: {fileID: -4341499977676749576}
   Morte: {fileID: 665639908850493681, guid: 586c5eae0d53b0340851ddf9286bf6d8, type: 3}
   vel: 3
-  lifeEnemy: 1000
+  lifeEnemy: 5000
   powerUp: {fileID: 0}
+  lifeUp: {fileID: 0}
+  escudoUp: {fileID: 0}
+  specialUp: {fileID: 0}
   Boss: {fileID: 7137636115709597607}
   dropItem: 0
   rb: {fileID: 5162083121596337355}
