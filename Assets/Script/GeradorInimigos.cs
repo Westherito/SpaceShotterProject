@@ -12,9 +12,9 @@ public class GeradorInimigos : MonoBehaviour
     private float timerRestart = 0f;
     [SerializeField] private float intervaloTimer = 5f;
     [SerializeField] private int qteInimigos = 0;
-    [SerializeField] private GameObject bossAnim;
+    [SerializeField] protected GameObject bossAnim;
     [SerializeField] private GameObject Player;
-    private bool checkBoss = false;
+    protected bool checkBoss = false;
     [SerializeField] private Text LevelDisplay, pontosDisplay;
     // Start is called before the first frame update
     void Start()

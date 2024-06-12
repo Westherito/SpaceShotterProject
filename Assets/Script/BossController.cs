@@ -12,7 +12,7 @@ public class BossController : EnemyFatherController
     [SerializeField] private Transform posTiroMid, posTiroDir, posTiroEsq;
     [SerializeField] private GameObject tiroBoss;
     private float timerBullet;
-    private float delayTiro = 1f;
+    private float delayTiro = 0.4f;
     // Vida do boss e estados
     [SerializeField] private Image lifeBoss;
     [SerializeField] private int lifeMax;

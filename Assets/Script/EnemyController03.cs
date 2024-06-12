@@ -19,7 +19,6 @@ public class EnemyController03 : EnemyFatherController
         // Alterando a velocidade inicial
         rb.velocity = new Vector2(0f, vel);
     }
-
     // Update is called once per frame
     void Update()
     {

@@ -630,7 +630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3089593200911277659}
-  - component: {fileID: 3089593200911277658}
+  - component: {fileID: 16077906100493160}
   - component: {fileID: 3089593200911277605}
   - component: {fileID: 6366506693967611397}
   m_Layer: 7
@@ -662,7 +662,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3089593200911277658
+--- !u!114 &16077906100493160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3089593200911277656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05d7f9b330fd2a4dbe8af2d9c05ccb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 545072fa06b92ee48a5beafbd93014e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SoundFX:
@@ -687,14 +687,14 @@ MonoBehaviour:
   levelTiro: 1
   escudo: {fileID: 1606021989777767949, guid: 4a142b41898ec634ea91f51e4e2a7cb6, type: 3}
   qteEscudo: 3
-  lifePlayer: 10
   Morte: {fileID: 1840275760436143286, guid: 8ef1af4ae8225094ab0aabbfb55fe0a7, type: 3}
   xMin: -8.316
   yMin: -4.4
   xMax: 8.316
   yMax: 4.4
+  EscudoDisplay: {fileID: 2886762343872427103}
   vidaDisplay: {fileID: 0}
-  EscudoDisplay: {fileID: 0}
+  lifeMax: 10
 --- !u!50 &3089593200911277605
 Rigidbody2D:
   serializedVersion: 4

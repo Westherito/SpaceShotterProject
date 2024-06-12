@@ -588,7 +588,7 @@ MonoBehaviour:
   MorteFx: {fileID: -4341499977676749576}
   Morte: {fileID: 665639908850493681, guid: 586c5eae0d53b0340851ddf9286bf6d8, type: 3}
   vel: 3
-  lifeEnemy: 5000
+  lifeEnemy: 2000
   powerUp: {fileID: 0}
   lifeUp: {fileID: 0}
   escudoUp: {fileID: 0}
@@ -604,7 +604,7 @@ MonoBehaviour:
   posTiroEsq: {fileID: 1925972005}
   tiroBoss: {fileID: 4323196566042879677, guid: 01c0c1110de10ad498c2c2c46cc3c692, type: 3}
   lifeBoss: {fileID: 359091739}
-  lifeMax: 1000
+  lifeMax: 2000
   estados:
   - estado1
   - estado2

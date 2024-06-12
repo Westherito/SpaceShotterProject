@@ -42,25 +42,25 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: x
+    positiveButton: m
     altNegativeButton: 
-    altPositiveButton: k
+    altPositiveButton: g
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 3
     joyNum: 0
   - serializedVersion: 3
     m_Name: Shield
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: z
+    positiveButton: n
     altNegativeButton: 
-    altPositiveButton: l
+    altPositiveButton: joystick button 1
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
