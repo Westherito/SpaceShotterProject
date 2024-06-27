@@ -6,11 +6,15 @@ public class PlayerController : PlayerFatherController
     // Start is called before the first frame update
     void Start()
     {
-
+        lifePlayer = lifeMax;
     }
     // Update is called once per frame
     void Update()
     {
+        vidaDisplay.fillAmount = ((float)lifePlayer / (float)lifeMax);
+        EscudoDisplay.text = qteEscudo.ToString();
+        MovimentoPlayer();
+        EscudoPlayer();
         TirosPlayer();
     }
     // Criando os tiros do player
