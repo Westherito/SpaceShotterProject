@@ -28,7 +28,6 @@ public class PlayerFatherController : MonoBehaviour
     [SerializeField] protected Text EscudoDisplay;
     [SerializeField] protected Image vidaDisplay;
     [SerializeField] protected int lifeMax;
-
     // Movimentação
     protected void MovimentoPlayer()
     {
@@ -82,8 +81,11 @@ public class PlayerFatherController : MonoBehaviour
     // Colisão com o PowerUp
     private void OnTriggerEnter2D(Collider2D collision)
     {
+       
         if (collision.CompareTag("PowerUp"))//Recompensa PowerUp
         {
+            var pontos = FindAnyObjectByType<GeradorInimigos>();
+            pontos.GanhaPontos(50);
             levelTiro++;
             Destroy(collision.gameObject);
             SoundFX[3].Play();
@@ -91,29 +93,39 @@ public class PlayerFatherController : MonoBehaviour
             {
                 levelTiro = 5;
             }
+            
         }
         if (collision.CompareTag("Life"))//Recompensa Vida
         {
+            var pontos = FindAnyObjectByType<GeradorInimigos>();
+            pontos.GanhaPontos(30);
             lifePlayer += 2;
             Destroy(collision.gameObject);
             SoundFX[3].Play();
+            
         }
         if (collision.CompareTag("Escudo"))//Recompensa Escudo
         {
+            var pontos = FindAnyObjectByType<GeradorInimigos>();
+            pontos.GanhaPontos(50);
             Destroy(collision.gameObject);
             SoundFX[3].Play();
             if (qteEscudo == 0)
             {
                 qteEscudo = 3;
             }
+            
         }
         if (collision.CompareTag("Special"))//Recompensa Special
         {
+            var pontos = FindAnyObjectByType<GeradorInimigos>();
+            pontos.GanhaPontos(5000); 
             Destroy(collision.gameObject);
             levelTiro = 5;
             lifePlayer = 10;
             qteEscudo = 3;
             SoundFX[3].Play();
+            
         }
     }
 }
