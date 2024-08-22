@@ -609,6 +609,8 @@ MonoBehaviour:
   - estado1
   - estado2
   - estado3
+  audioControler: {fileID: 0}
+  BossMusic: {fileID: 8300000, guid: 3a831f42414719c44b819a9a5480e974, type: 3}
 --- !u!95 &3963874861926158578
 Animator:
   serializedVersion: 5

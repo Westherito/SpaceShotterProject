@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -395494379
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b691a47321c85574aa9e78f71c5a9ae6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss: {fileID: 7137636115709597607, guid: b6e145d83eeb18d4b8745256e6464c59, type: 3}
+  BossMusic: {fileID: 8300000, guid: 3a831f42414719c44b819a9a5480e974, type: 3}
 --- !u!1 &3747972023752717504
 GameObject:
   m_ObjectHideFlags: 0

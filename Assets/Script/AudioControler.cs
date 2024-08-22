@@ -1,28 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class AudioControler : GeradorInimigos
+using UnityEditor.Search;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class AudioControler : MonoBehaviour
 {
     [SerializeField] private AudioSource AudioMain;
-    [SerializeField] private AudioClip Nivel1;
-    [SerializeField] private AudioClip BossMusic;
-
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private AudioClip[] MusicaBG;
+    public void BGMusic(string cena)
     {
-
+        SceneManager.LoadScene(cena);
+        switch (cena) {
+            case "Menu":
+                TocarMusica(MusicaBG[0]);
+                break;
+            case "lvl1":
+                TocarMusica(MusicaBG[1]);
+                break;
+            case "lvl2":
+                TocarMusica(MusicaBG[2]);
+                break;
+            case "lvl3":
+                TocarMusica(MusicaBG[3]);
+                break;
+            case "GameOver":
+                TocarMusica(MusicaBG[4]);
+                break;
+        }        
     }
-    // Update is called once per frame
-    void Update()
+    public void TocarMusica(AudioClip clip)
     {
-        if (bossAnim != null)
-        {
-            AudioMain.clip = BossMusic;
-        }
-        else
-        {
-            AudioMain.clip = Nivel1;
-        }
+        AudioMain.Stop();
+        AudioMain.clip = clip;
+        AudioMain.loop = true;
+        AudioMain.Play();
     }
 }

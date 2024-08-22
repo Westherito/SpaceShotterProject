@@ -18,7 +18,7 @@ public class BossController : EnemyFatherController
     [SerializeField] private int lifeMax;
     [SerializeField] private string[] estados;
     private float timerEstado = 10f;
-
+    
     // Start is called before the first frame update
     void Start()
     {

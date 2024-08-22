@@ -29,6 +29,7 @@ public class EnemyFatherController : MonoBehaviour
                 GeraPowerUp();
                 var gerador = FindAnyObjectByType<GeradorInimigos>();
                 gerador.GanhaPontos(ponto);
+                
             }
         }
     }

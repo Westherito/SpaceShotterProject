@@ -92,8 +92,7 @@ public class PlayerFatherController : MonoBehaviour
             if (levelTiro >= 5)
             {
                 levelTiro = 5;
-            }
-            
+            }   
         }
         if (collision.CompareTag("Life"))//Recompensa Vida
         {

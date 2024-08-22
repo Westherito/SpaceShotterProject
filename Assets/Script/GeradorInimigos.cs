@@ -16,6 +16,9 @@ public class GeradorInimigos : MonoBehaviour
     [SerializeField] private GameObject Player;
     protected bool checkBoss = false;
     [SerializeField] private Text LevelDisplay, pontosDisplay;
+    // Musica do Boss
+    [SerializeField] private AudioControler audioControler;
+    [SerializeField] private AudioClip BossMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +112,10 @@ public class GeradorInimigos : MonoBehaviour
         {
             GameObject animBoss = Instantiate(bossAnim, Vector3.zero, transform.rotation);
             checkBoss = true;
+            if (checkBoss)
+            {
+                audioControler.TocarMusica(BossMusic);
+            }
         }
     }
     // Ganhando pontos
@@ -148,7 +155,7 @@ public class GeradorInimigos : MonoBehaviour
             return true;
         }
     }
-    // Reinicio 
+    // Reinicio (Modificar depois para tela de game over)
     public void Recomecar()
     {     
         if (timerRestart >= 6f)
