@@ -251,9 +251,9 @@ PrefabInstance:
     - {fileID: 1152887093017084276, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
     - {fileID: 3523980912959643280, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a6d3e9544d1bb94da70cd56158be381, type: 3}
---- !u!114 &543357669 stripped
+--- !u!114 &518472978 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3376672980968920443, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
+  m_CorrespondingSourceObject: {fileID: 754243739, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
   m_PrefabInstance: {fileID: 3376672981503520670}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -842,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: BossMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 3a831f42414719c44b819a9a5480e974, type: 3}
+      objectReference: {fileID: 8300000, guid: 5b4817952a5e61042852bf1abd725c41, type: 3}
     - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: LevelDisplay
       value: 
@@ -854,7 +854,7 @@ PrefabInstance:
     - target: {fileID: 207122074111584502, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: audioControler
       value: 
-      objectReference: {fileID: 543357669}
+      objectReference: {fileID: 518472978}
     - target: {fileID: 207122074111584503, guid: 0f5930d942ba3774f93243ecf68ca21f, type: 3}
       propertyPath: m_Name
       value: Gerador de inimigos
@@ -986,7 +986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1772443105619901123, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 81.99777
+      value: 81.99771
       objectReference: {fileID: 0}
     - target: {fileID: 1772443106549450259, guid: 4bf68e6e29406df41a60c106b0006973, type: 3}
       propertyPath: m_Name
@@ -1201,6 +1201,30 @@ PrefabInstance:
     - target: {fileID: 3376672980968920440, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376672980968920443, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
+      propertyPath: MusicaBG.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376672980968920443, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
+      propertyPath: MusicaBG.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376672980968920443, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
+      propertyPath: MusicaBG.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b8089bc47697d646a839b316eb9c2ff, type: 3}
+    - target: {fileID: 3376672980968920443, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
+      propertyPath: MusicaBG.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a831f42414719c44b819a9a5480e974, type: 3}
+    - target: {fileID: 3376672980968920443, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
+      propertyPath: MusicaBG.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376672980968920443, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
+      propertyPath: MusicaBG.Array.data[4]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3376672980968920445, guid: 9c46d23f2aac76645908a80cd00e7fad, type: 3}
       propertyPath: m_Name

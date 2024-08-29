@@ -22,6 +22,7 @@ public class GeradorInimigos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioControler.BGMusic(1);
     }
     // Update is called once per frame
     void Update()
@@ -30,6 +31,7 @@ public class GeradorInimigos : MonoBehaviour
         pontosDisplay.text = pontos.ToString();
         if (level < 10)
         {
+            
             GeraInimigo();
         }
         else
@@ -116,6 +118,7 @@ public class GeradorInimigos : MonoBehaviour
             {
                 audioControler.TocarMusica(BossMusic);
             }
+            
         }
     }
     // Ganhando pontos
@@ -160,7 +163,7 @@ public class GeradorInimigos : MonoBehaviour
     {     
         if (timerRestart >= 6f)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else if (timerRestart <= 6f)
         {

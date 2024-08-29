@@ -7,23 +7,24 @@ public class AudioControler : MonoBehaviour
 {
     [SerializeField] private AudioSource AudioMain;
     [SerializeField] private AudioClip[] MusicaBG;
-    public void BGMusic(string cena)
+
+    public void BGMusic(int cena)
     {
-        SceneManager.LoadScene(cena);
+
         switch (cena) {
-            case "Menu":
+            case 0:
                 TocarMusica(MusicaBG[0]);
                 break;
-            case "lvl1":
+            case 1:
                 TocarMusica(MusicaBG[1]);
                 break;
-            case "lvl2":
+            case 2:
                 TocarMusica(MusicaBG[2]);
                 break;
-            case "lvl3":
+            case 3:
                 TocarMusica(MusicaBG[3]);
                 break;
-            case "GameOver":
+            case 4:
                 TocarMusica(MusicaBG[4]);
                 break;
         }        
