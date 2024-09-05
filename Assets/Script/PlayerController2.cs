@@ -1,11 +1,28 @@
 
 using UnityEngine;
-using UnityEngine.UI;
 public class PlayerController2 : PlayerFatherController
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private PlayerInputActions PlayerControl;
+
+    private void OnEnable()
     {
+        PlayerControl.Enable();
+        PlayerControl.Player.Movimento.Enable();
+        PlayerControl.Player.Fire.Enable();
+        PlayerControl.Player.Shield.Enable();
+    }
+    private void OnDisable()
+    {
+        PlayerControl.Disable();
+        PlayerControl.Player.Movimento.Disable();
+        PlayerControl.Player.Fire.Disable();
+        PlayerControl.Player.Shield.Disable();
+    }
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        PlayerControl = new PlayerInputActions();
         lifePlayer = lifeMax;
     }
     // Update is called once per frame
@@ -17,11 +34,52 @@ public class PlayerController2 : PlayerFatherController
         EscudoPlayer();
         TirosPlayer();
     }
-    // Criando os tiros do player
-    private void TirosPlayer()
+    // Movimentação
+    public void MovimentoPlayer()
     {
 
-        if (Input.GetButton("Fire1"))
+        // Pegando o Input do usuário e adicionando velocidade
+        movPlayer = PlayerControl.Player.Movimento.ReadValue<Vector2>();
+        //movPlayer.x = Input.GetAxis("Horizontal");
+        //movPlayer.y = Input.GetAxis("Vertical");
+        // Normalizando a direção
+        movPlayer.Normalize();
+        // Passando para o player
+        rbPlayer.velocity = movPlayer * vel;
+        // Checando os limites do player na tela com Clamp
+        float limiteX = Mathf.Clamp(transform.position.x, xMin, xMax);
+        float limiteY = Mathf.Clamp(transform.position.y, yMin, yMax);
+        // Aplicando o limite 
+        transform.position = new Vector3(limiteX, limiteY, transform.position.z);
+
+    }
+
+    // Método do escudo
+    public void EscudoPlayer()
+    {
+        if (PlayerControl.Player.Shield.IsPressed())
+            if (qteEscudo > 0)
+            {
+                // Criando escudo se não tiver nenhum no jogo
+                if (!escudoAtual) { escudoAtual = Instantiate(escudo, transform.position, transform.rotation); SoundFX[2].Play(); }
+            }
+        if (escudoAtual)
+        {
+            // Determinando o tempo do escudo e a posição
+            escudoAtual.transform.position = transform.position;
+            timerEscudo += Time.deltaTime;
+            if (timerEscudo > 9.2f)
+            {
+                qteEscudo--;
+                Destroy(escudoAtual);
+                timerEscudo = 0f;
+            }
+        }
+    }
+    // Criando os tiros do player
+    public void TirosPlayer()
+    {
+        if (PlayerControl.Player.Fire.IsPressed())
         {
             timerBullet -= Time.deltaTime;
             switch (levelTiro)
@@ -33,7 +91,6 @@ public class PlayerController2 : PlayerFatherController
                         timerBullet = 0.15f;
                     }
                     break;
-
                 case 2:
                     if (timerBullet < 0f)
                     {
@@ -100,6 +157,4 @@ public class PlayerController2 : PlayerFatherController
         Tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velTiro);
         SoundFX[0].Play();
     }
-    // Destruindo player caso ele perda todas as vidas e reiniciando o jogo
-
 }

@@ -57,3 +57,5 @@ MonoBehaviour:
   Player: {fileID: 0}
   LevelDisplay: {fileID: 0}
   pontosDisplay: {fileID: 0}
+  audioControler: {fileID: 0}
+  BossMusic: {fileID: 8300000, guid: 5b4817952a5e61042852bf1abd725c41, type: 3}

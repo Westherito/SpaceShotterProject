@@ -36,9 +36,8 @@ public class EnemyFatherController : MonoBehaviour
     public void BossLife(int dano) // Checando se o boss leva dano
     {
         lifeEnemy -= dano;
-        if (lifeEnemy <= 0)
+        if (lifeEnemy <= 0) // Caso o boss morra
         {
-            //MorteFx.Play();
             Destroy(Boss);
             Instantiate(Morte, transform.position, transform.rotation);
             var gerador = FindAnyObjectByType<GeradorInimigos>();
